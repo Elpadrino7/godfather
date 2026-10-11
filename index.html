@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Biography & Portfolio</title>
+  <title>Personal Biography & Portfolio — ROONEY (GODFATHER LLC)</title>
   
+  <!-- OpenGraph & Social Preview Meta Tags -->
+  <meta property="og:title" content="ROONEY — GODFATHER LLC" />
+  <meta property="og:description" content="Computer Science Student | Competitive Gamer | Strategist | Godfather" />
+  <meta property="og:image" content="Rooney.jpg" />
+  <meta property="og:url" content="https://godfatherllc.me" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   
@@ -38,6 +45,7 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(229, 231, 235, 0.8);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .dark .glass-card {
@@ -46,15 +54,18 @@
     }
 
     .hover-glow:hover {
-      box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.25);
+      box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
     }
 
     .game-glow-efootball:hover {
-      box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.4);
+      transform: translateY(-2px);
     }
 
     .game-glow-pubg:hover {
-      box-shadow: 0 0 25px -5px rgba(217, 119, 6, 0.35);
+      box-shadow: 0 0 25px -5px rgba(217, 119, 6, 0.4);
+      transform: translateY(-2px);
     }
     
     ::-webkit-scrollbar {
@@ -73,15 +84,25 @@
   </style>
 </head>
 
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 min-h-screen">
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 min-h-screen relative">
 
-  <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80 px-4 py-3">
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-blue-500 z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 px-4 py-2.5 rounded-xl shadow-2xl text-xs font-semibold flex items-center gap-2 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toastMsg">Copied to clipboard!</span>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-md bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80 px-4 py-3">
     <div class="max-w-2xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-2">
         <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
         <span class="font-semibold text-xs sm:text-sm tracking-tight text-zinc-600 dark:text-zinc-300">Biography & Portfolio</span>
       </div>
-      <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all duration-200">
+      <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all duration-200 hover:scale-110 active:scale-95">
         <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
       </button>
     </div>
@@ -89,14 +110,14 @@
 
   <main class="max-w-2xl mx-auto px-4 pt-24 pb-16 space-y-12">
 
-    <section class="space-y-6">
+    <!-- Hero Section -->
+    <section class="glass-card p-6 rounded-2xl hover-glow space-y-6">
       <div class="flex items-center gap-5">
         <div class="relative group">
-          <!-- Updated image code targeting Rooney.jpg with focus on head/face area -->
           <img 
             src="Rooney.jpg" 
             alt="Rooney"
-            class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-[center_top] ring-2 ring-zinc-300 dark:ring-zinc-700 transition-all duration-300 group-hover:scale-105"
+            class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-[center_top] ring-2 ring-zinc-300 dark:ring-zinc-700 transition-all duration-300 group-hover:scale-105 group-hover:ring-blue-500 shadow-md"
             onerror="this.src='https://placehold.co/200x200/1e293b/ffffff?text=Rooney'"
           />
           <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-zinc-50 dark:border-zinc-950 rounded-full" title="Active & Available"></span>
@@ -107,17 +128,22 @@
           <p class="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-400">
             Tall (6'2"), Majestic and Nonchalant.
           </p>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5 pt-0.5">
-            <i class="fa-solid fa-location-dot text-red-500"></i> Nairobi, Kenya
-          </p>
+          <div class="flex items-center gap-2 pt-0.5">
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot text-red-500"></i> Nairobi, Kenya
+            </p>
+            <span class="text-zinc-300 dark:text-zinc-700">•</span>
+            <span class="px-2 py-0.5 text-[10px] bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 rounded-full font-mono">Online</span>
+          </div>
         </div>
       </div>
 
       <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm sm:text-base">
-        Student | Tech Enthusiast | Strategist | Godfather | Husband | Competetive Gamer | Leader | And a man with nothing to prove.
+        Student | Tech Enthusiast | Strategist | Godfather | Husband | Competitive Gamer | Leader | And a man with nothing to prove.
       </p>
     </section>
 
+    <!-- Life Journey -->
     <section class="space-y-4">
       <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
         <i class="fa-solid fa-route text-blue-500"></i> Life Journey
@@ -125,36 +151,57 @@
       
       <div class="relative border-l-2 border-zinc-200 dark:border-zinc-800 ml-3 space-y-6">
         
-        <div class="relative pl-6">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-zinc-50 dark:ring-zinc-950"></span>
-          <span class="text-xs font-mono text-zinc-400">2024 - PRESENT</span>
-          <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Refining Creative Tech & Esports Precision</h3>
-          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-            Focusing on building minimal web software, publishing design insights, and sharpening competitive tactics in eFootball and PUBG Mobile tournaments.
-          </p>
+       <div class="relative pl-6 group">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-zinc-50 dark:ring-zinc-950 group-hover:scale-125 group-hover:bg-blue-500 transition-all duration-300"></span>
+          <div class="glass-card p-4 rounded-xl hover-glow">
+            <span class="text-xs font-mono text-zinc-400">Watch this !</span>
+            <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mt-0.5">Quick breakthrough</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+              DOB - 24th September 2004.
+              Age - 22 Years
+              Blood Group - O+
+              Height - 6'2" (188cm)
+            </p>
+          </div>
         </div>
 
-        <div class="relative pl-6">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-zinc-50 dark:ring-zinc-950"></span>
-          <span class="text-xs font-mono text-zinc-400">2023 - 2024</span>
-          <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Stepping into Development & Strategy</h3>
-          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-            Dived into frontend technologies, UI/UX fundamentals, and high-tier competitive gaming team coordination.
-          </p>
+        <div class="relative pl-6 group">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-zinc-50 dark:ring-zinc-950 group-hover:scale-125 transition-transform duration-300"></span>
+          <div class="glass-card p-4 rounded-xl hover-glow">
+            <span class="text-xs font-mono text-zinc-400">2024 - PRESENT</span>
+            <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mt-0.5">Refining Creative Tech & Esports Precision</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+              Focusing on building minimal web software, publishing design insights, and sharpening competitive tactics in eFootball and PUBG Mobile tournaments.
+            </p>
+          </div>
         </div>
 
-         <div class="relative pl-6">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-zinc-50 dark:ring-zinc-950"></span>
-          <span class="text-xs font-mono text-zinc-400">Since Birth</span>
-          <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">All time VYBZ KARTEL listener</h3>
-          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-            A lifelong fan of VYBZ KARTEL's music, drawing inspiration from his lyrical prowess and storytelling in shaping my own creative and strategic mindset from Gospels such as "Which League", "Send A Hell", "You Make Me Cry", "Fever", "Clarks" and "Summertime".
-          </p>
+        <div class="relative pl-6 group">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-zinc-50 dark:ring-zinc-950 group-hover:scale-125 group-hover:bg-blue-500 transition-all duration-300"></span>
+          <div class="glass-card p-4 rounded-xl hover-glow">
+            <span class="text-xs font-mono text-zinc-400">2023 - 2024</span>
+            <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mt-0.5">Stepping into Development & Strategy</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+              Dived into frontend technologies, UI/UX fundamentals, and high-tier competitive gaming team coordination.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative pl-6 group">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-zinc-50 dark:ring-zinc-950 group-hover:scale-125 transition-transform duration-300"></span>
+          <div class="glass-card p-4 rounded-xl hover-glow">
+            <span class="text-xs font-mono text-zinc-400">Since Birth</span>
+            <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mt-0.5">All time VYBZ KARTEL listener</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+              A lifelong fan of VYBZ KARTEL's music, drawing inspiration from his lyrical prowess and storytelling in shaping my own creative and strategic mindset from Gospels such as "Which League", "Send A Hell", "You Make Me Cry", "Fever", "Clarks" and "Summertime".
+            </p>
+          </div>
         </div>
 
       </div>
     </section>
 
+    <!-- Education Background -->
     <section class="space-y-4">
       <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
         <i class="fa-solid fa-graduation-cap text-blue-500"></i> Education Background
@@ -188,7 +235,7 @@
           </p>
         </div>
 
-         <div class="glass-card p-4 rounded-xl hover-glow transition-all duration-200">
+        <div class="glass-card p-4 rounded-xl hover-glow transition-all duration-200">
           <div class="flex justify-between items-start">
             <div>
               <h3 class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Primary School (KCPE)</h3>
@@ -204,21 +251,21 @@
       </div>
     </section>
 
+    <!-- Gaming Experience (Clickable to open image popups) -->
     <section class="space-y-4">
       <div class="flex items-center justify-between">
         <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
           <i class="fa-solid fa-gamepad text-emerald-500"></i> Gaming Experience
         </h2>
-        <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Competitive Play</span>
+        <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Click to View Screenshots</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <!-- eFootball Card -->
-        <div class="glass-card p-5 rounded-2xl game-glow-efootball transition-all duration-300 relative overflow-hidden group border border-blue-500/20">
+        <!-- eFootball Card (Opens efootball modal) -->
+        <div onclick="openGameModal('efootball')" class="glass-card p-5 rounded-2xl game-glow-efootball transition-all duration-300 relative overflow-hidden group border border-blue-500/20 cursor-pointer">
           <div class="flex items-center gap-3 mb-4">
-            <!-- Custom eFootball Badge Icon -->
-            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-800 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 ring-1 ring-white/20">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-800 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 ring-1 ring-white/20 group-hover:scale-110 transition-transform duration-300">
               <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 13v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
@@ -239,24 +286,23 @@
             </div>
             <div class="flex justify-between items-center border-b border-zinc-200 dark:border-zinc-800/80 pb-1.5">
               <span class="text-zinc-500 dark:text-zinc-400">Playstyle</span>
-              <span class="font-semibold text-zinc-800 dark:text-zinc-200">Long Ball Counter and Quick Counter</span>
+              <span class="font-semibold text-zinc-800 dark:text-zinc-200">Long Ball & Quick Counter</span>
             </div>
             <div class="flex justify-between items-center border-b border-zinc-200 dark:border-zinc-800/80 pb-1.5">
               <span class="text-zinc-500 dark:text-zinc-400">Squad Rating</span>
               <span class="font-mono font-bold text-emerald-500">3250</span>
             </div>
-            <div class="flex justify-between items-center">
-              <span class="text-zinc-500 dark:text-zinc-400">Key Focus</span>
-              <span class="text-[11px] text-zinc-600 dark:text-zinc-300">Passing IQ, Tiki Taka & Micro dribbling</span>
+            <div class="flex justify-between items-center text-[11px] text-blue-500 font-medium pt-1">
+              <span>View Squad & Badge Proof</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </div>
           </div>
         </div>
 
-        <!-- PUBG Mobile Card -->
-        <div class="glass-card p-5 rounded-2xl game-glow-pubg transition-all duration-300 relative overflow-hidden group border border-amber-500/20">
+        <!-- PUBG Mobile Card (Opens pubg modal) -->
+        <div onclick="openGameModal('pubg')" class="glass-card p-5 rounded-2xl game-glow-pubg transition-all duration-300 relative overflow-hidden group border border-amber-500/20 cursor-pointer">
           <div class="flex items-center gap-3 mb-4">
-            <!-- Custom PUBG Crosshairs / Helmet Icon -->
-            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 text-white flex items-center justify-center shadow-lg shadow-amber-500/20 ring-1 ring-white/20">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 text-white flex items-center justify-center shadow-lg shadow-amber-500/20 ring-1 ring-white/20 group-hover:scale-110 transition-transform duration-300">
               <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 3v2.05a7.002 7.002 0 015.95 5.95H21v2h-2.05a7.002 7.002 0 01-5.95 5.95V21h-2v-2.05a7.002 7.002 0 01-5.95-5.95H3v-2h2.05a7.002 7.002 0 015.95-5.95V5h2zm-1 5a3 3 0 100 6 3 3 0 000-6z"/>
               </svg>
@@ -277,15 +323,15 @@
             </div>
             <div class="flex justify-between items-center border-b border-zinc-200 dark:border-zinc-800/80 pb-1.5">
               <span class="text-zinc-500 dark:text-zinc-400">In-Game Role</span>
-              <span class="font-semibold text-zinc-800 dark:text-zinc-200"> Assaulter, Entry Fragger & Sniper</span>
+              <span class="font-semibold text-zinc-800 dark:text-zinc-200"> Assaulter & Sniper</span>
             </div>
             <div class="flex justify-between items-center border-b border-zinc-200 dark:border-zinc-800/80 pb-1.5">
               <span class="text-zinc-500 dark:text-zinc-400">Favorite Guns</span>
-              <span class="font-semibold text-amber-500">M416 / AUG + M24 / AWM</span>
+              <span class="font-semibold text-amber-500">M416 / AUG + AWM</span>
             </div>
-            <div class="flex justify-between items-center">
-              <span class="text-zinc-500 dark:text-zinc-400">Specialty</span>
-              <span class="text-[11px] text-zinc-600 dark:text-zinc-300">Close combat sprays & rotations</span>
+            <div class="flex justify-between items-center text-[11px] text-amber-500 font-medium pt-1">
+              <span>View Tier & Highlights</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </div>
           </div>
         </div>
@@ -293,6 +339,7 @@
       </div>
     </section>
 
+    <!-- Creative Work & Projects -->
     <section class="space-y-4">
       <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
         <i class="fa-solid fa-code text-indigo-500"></i> Creative Work & Projects
@@ -325,58 +372,74 @@
       </div>
     </section>
 
+    <!-- Philosophy & Core Principles with World Boss Quote Rotator -->
     <section class="space-y-4">
-      <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-        <i class="fa-solid fa-lightbulb text-amber-500"></i> Philosophy & Core Principles
-      </h2>
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+          <i class="fa-solid fa-lightbulb text-amber-500"></i> Philosophy & Core Principles
+        </h2>
+        <button onclick="rotateKartelQuote()" class="text-[10px] font-mono text-amber-500 hover:underline flex items-center gap-1">
+          <i class="fa-solid fa-rotate"></i> Next Motto
+        </button>
+      </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="glass-card p-4 rounded-xl space-y-1">
+        <div class="glass-card p-4 rounded-xl hover-glow space-y-1">
           <div class="text-blue-500 mb-1"><i class="fa-solid fa-feather text-base"></i></div>
           <h3 class="text-xs font-bold text-zinc-800 dark:text-zinc-200">SELF-RESPECT</h3>
           <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Never lose yourself trying to be someone else.</p>
         </div>
 
-        <div class="glass-card p-4 rounded-xl space-y-1">
+        <div class="glass-card p-4 rounded-xl hover-glow space-y-1">
           <div class="text-emerald-500 mb-1"><i class="fa-solid fa-chart-line text-base"></i></div>
           <h3 class="text-xs font-bold text-zinc-800 dark:text-zinc-200">LOYALTY</h3>
           <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Give genuine commitment, but expect it to be mutual.</p>
         </div>
 
-        <div class="glass-card p-4 rounded-xl space-y-1">
+        <div class="glass-card p-4 rounded-xl hover-glow space-y-1">
           <div class="text-purple-500 mb-1"><i class="fa-solid fa-bullseye text-base"></i></div>
           <h3 class="text-xs font-bold text-zinc-800 dark:text-zinc-200">PURPOSE</h3>
           <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Have directions, maintain your standards, and keep growing.</p>
         </div>
       </div>
+
+      <!-- Gaza World Boss Motto Banner -->
+      <div class="glass-card p-4 rounded-xl border border-amber-500/30 flex items-center gap-3">
+        <i class="fa-solid fa-quote-left text-amber-500 text-lg"></i>
+        <p id="kartelQuote" class="text-xs italic text-zinc-700 dark:text-zinc-300 transition-opacity duration-300">
+          "Which league you deh? Mindset over everything." — Gaza World Boss Motivation
+        </p>
+      </div>
     </section>
 
+    <!-- Hobbies & Tech Stack -->
     <section class="space-y-4">
       <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
         <i class="fa-solid fa-laptop-code text-purple-500"></i> Hobbies & Tech Stack
       </h2>
 
-      <div class="glass-card p-4 rounded-xl space-y-3">
+      <div class="glass-card p-4 rounded-xl hover-glow space-y-3">
         <div class="flex flex-wrap gap-2">
-          <span class="px-2.5 py-1 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5">
+          <span class="px-3 py-1.5 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5 hover:scale-105 hover:bg-orange-500/10 hover:text-orange-500 transition-all duration-200 cursor-default">
             <i class="fa-brands fa-html5 text-orange-500"></i> HTML5 / CSS3
           </span>
-          <span class="px-2.5 py-1 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5">
+          <span class="px-3 py-1.5 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5 hover:scale-105 hover:bg-yellow-500/10 hover:text-yellow-500 transition-all duration-200 cursor-default">
             <i class="fa-solid fa-plane text-yellow-500"></i> Adventure
           </span>
-          <span class="px-2.5 py-1 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5">
+          <span class="px-3 py-1.5 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5 hover:scale-105 hover:bg-blue-500/10 hover:text-blue-500 transition-all duration-200 cursor-default">
             <i class="fa-solid fa-music text-blue-500"></i> Kartel Music
           </span>
-          <span class="px-2.5 py-1 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5">
+          <span class="px-3 py-1.5 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5 hover:scale-105 hover:bg-emerald-500/10 hover:text-emerald-500 transition-all duration-200 cursor-default">
             <i class="fa-brands fa-playstation text-emerald-500"></i> Video Games
           </span>
-          <span class="px-2.5 py-1 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5">
+          <span class="px-3 py-1.5 text-xs rounded-lg bg-zinc-200/80 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium flex items-center gap-1.5 hover:scale-105 hover:bg-indigo-500/10 hover:text-indigo-500 transition-all duration-200 cursor-default">
             <i class="fa-solid fa-code text-indigo-500"></i> VS Code
           </span>
         </div>
       </div>
     </section>
 
+    <!-- Let's Connect (Social Links Grid with Copy Toast) -->
     <section class="pt-8 border-t border-zinc-200 dark:border-zinc-800/80 space-y-5 text-center">
       <h2 class="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
         Let's Connect
@@ -385,43 +448,43 @@
       <div class="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 max-w-md sm:max-w-xl mx-auto px-2">
         
         <!-- Twitter / X -->
-        <a href="https://twitter.com/GODFATHER_LLC" target="_blank" rel="noopener" aria-label="Twitter X"
-           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
+        <a href="https://twitter.com/GODFATHER_LLC" target="_blank" rel="noopener" aria-label="Twitter X" onclick="triggerToast('Opening Twitter...')"
+           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover-glow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
           <i class="fa-brands fa-x-twitter text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
           <span class="text-[10px] font-medium tracking-tight">Twitter / X</span>
         </a>
 
         <!-- Instagram -->
-        <a href="https://instagram.com/_r00n3y_" target="_blank" rel="noopener" aria-label="Instagram"
-           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
+        <a href="https://instagram.com/_r00n3y_" target="_blank" rel="noopener" aria-label="Instagram" onclick="triggerToast('Opening Instagram...')"
+           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover-glow hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
           <i class="fa-brands fa-instagram text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
           <span class="text-[10px] font-medium tracking-tight">Instagram</span>
         </a>
 
         <!-- WhatsApp -->
-        <a href="https://wa.me/+254797959452" target="_blank" rel="noopener" aria-label="WhatsApp"
-           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover:bg-emerald-600 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
+        <a href="https://wa.me/+254797959452" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="triggerToast('Opening WhatsApp...')"
+           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover-glow hover:bg-emerald-600 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
           <i class="fa-brands fa-whatsapp text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
           <span class="text-[10px] font-medium tracking-tight">WhatsApp</span>
         </a>
 
         <!-- TikTok -->
-        <a href="https://tiktok.com/@godfather.llc" target="_blank" rel="noopener" aria-label="TikTok"
-           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover:bg-black hover:text-white dark:hover:bg-zinc-800 transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
+        <a href="https://tiktok.com/@godfather.llc" target="_blank" rel="noopener" aria-label="TikTok" onclick="triggerToast('Opening TikTok...')"
+           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover-glow hover:bg-black hover:text-white dark:hover:bg-zinc-800 transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
           <i class="fa-brands fa-tiktok text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
           <span class="text-[10px] font-medium tracking-tight">TikTok</span>
         </a>
 
         <!-- Facebook -->
-        <a href="https://facebook.com/Rooney Cgh" target="_blank" rel="noopener" aria-label="Facebook"
-           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover:bg-blue-600 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
+        <a href="https://facebook.com/Rooney Cgh" target="_blank" rel="noopener" aria-label="Facebook" onclick="triggerToast('Opening Facebook...')"
+           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover-glow hover:bg-blue-600 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
           <i class="fa-brands fa-facebook-f text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
           <span class="text-[10px] font-medium tracking-tight">Facebook</span>
         </a>
 
         <!-- Email -->
-        <a href="mailto:your.itsrooney7@gmail.com" aria-label="Email"
-           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover:bg-red-500 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
+        <a href="mailto:your.itsrooney7@gmail.com" aria-label="Email" onclick="triggerToast('Opening Email...')"
+           class="flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl glass-card hover-glow hover:bg-red-500 hover:text-white transition-all duration-200 text-zinc-700 dark:text-zinc-300 shadow-sm hover:scale-105 group">
           <i class="fa-solid fa-envelope text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
           <span class="text-[10px] font-medium tracking-tight">Email</span>
         </a>
@@ -435,9 +498,27 @@
 
   </main>
 
+  <!-- Game Screenshot Popups Modal Container -->
+  <div id="gameModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full p-5 rounded-3xl space-y-4 relative border border-zinc-700 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center pb-2 border-b border-zinc-800">
+        <h3 id="modalTitle" class="text-sm font-bold tracking-tight text-zinc-100">Gaming Showcase</h3>
+        <button onclick="closeGameModal()" class="text-zinc-400 hover:text-zinc-100 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Screenshot Grid Container -->
+      <div id="modalImages" class="space-y-3">
+        <!-- Dynamically filled with efootball 1/2 or pubg 1/2 images -->
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Theme Toggle
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
 
@@ -455,6 +536,91 @@
         themeIcon.className = 'fa-solid fa-sun text-base';
       }
     });
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+    });
+
+    // Toast Notification Handler
+    function triggerToast(text) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = text;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Modal Image Popup Handler (EFootball 1 & 2 / PUBG 1 & 2)
+    function openGameModal(gameType) {
+      const modal = document.getElementById('gameModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalImages = document.getElementById('modalImages');
+
+      if (gameType === 'efootball') {
+        modalTitle.textContent = 'eFootball™ Mobile — Division 1 & Team Setup';
+        modalImages.innerHTML = `
+          <div class="space-y-2">
+            <p class="text-xs text-zinc-400 font-mono">1. Starting XI & Team Rating</p>
+            <img src="efootball 1.jpg" alt="eFootball Squad" class="w-full rounded-xl object-cover ring-1 ring-blue-500/30" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+1.jpg+Not+Found'" />
+          </div>
+          <div class="space-y-2 pt-2">
+            <p class="text-xs text-zinc-400 font-mono">2. Division 1 Highest Badge</p>
+            <img src="efootball 2.jpg" alt="eFootball Division 1 Rank" class="w-full rounded-xl object-cover ring-1 ring-blue-500/30" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+2.jpg+Not+Found'" />
+          </div>
+        `;
+      } else if (gameType === 'pubg') {
+        modalTitle.textContent = 'PUBG MOBILE — Conqueror Rank & Loadout';
+        modalImages.innerHTML = `
+          <div class="space-y-2">
+            <p class="text-xs text-zinc-400 font-mono">1. Conqueror Badge & Statistics</p>
+            <img src="pubg 1.jpg" alt="PUBG Conqueror Badge" class="w-full rounded-xl object-cover ring-1 ring-amber-500/30" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+1.jpg+Not+Found'" />
+          </div>
+          <div class="space-y-2 pt-2">
+            <p class="text-xs text-zinc-400 font-mono">2. In-Game Controls & Sensitivity Setup</p>
+            <img src="pubg 2.jpg" alt="PUBG Gameplay Setup" class="w-full rounded-xl object-cover ring-1 ring-amber-500/30" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+2.jpg+Not+Found'" />
+          </div>
+        `;
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeGameModal() {
+      const modal = document.getElementById('gameModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close Modal on Outside Backdrop Click
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('gameModal');
+      if (e.target === modal) closeGameModal();
+    });
+
+    // World Boss Quote Rotator
+    const kartelQuotes = [
+      '"Eee boy bwoyy mabwoyyss, nikatie mkate ama tukate nusu nusu." — Anko T',
+      '"Someone get these beggers out of here." — Rooney',
+      '"Real bosses don\'t loud up, the numbers and results speak." — Nonchalant Code',
+      '"Every challenge is just practice for the main tournament." — Strategy Principle'
+    ];
+    let quoteIdx = 0;
+
+    function rotateKartelQuote() {
+      quoteIdx = (quoteIdx + 1) % kartelQuotes.length;
+      const el = document.getElementById('kartelQuote');
+      el.style.opacity = '0';
+      setTimeout(() => {
+        el.textContent = kartelQuotes[quoteIdx];
+        el.style.opacity = '1';
+      }, 200);
+    }
   </script>
 </body>
 </html>
