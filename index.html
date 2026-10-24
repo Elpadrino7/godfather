@@ -12,9 +12,8 @@
   <meta property="og:url" content="https://godfatherllc.me" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Tailwind CSS & Font Awesome Icons -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   
   <script>
     tailwind.config = {
@@ -27,7 +26,8 @@
               500: '#3b82f6',
               600: '#2563eb',
               900: '#1e3a8a',
-            }
+            },
+            timelineGreen: '#2e7d32'
           }
         }
       }
@@ -35,95 +35,27 @@
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    /* Mulish font family */
+    @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
     
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    * {
+      font-family: 'Mulish', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     }
 
-    /* -------------------------------------------------------------
-       1. GLASSMORPHISM CARDS & NAV STYLES
-       ------------------------------------------------------------- */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(28px) saturate(190%);
-      -webkit-backdrop-filter: blur(28px) saturate(190%);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
-      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    
-    .dark .glass-card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(32px) saturate(210%);
-      -webkit-backdrop-filter: blur(32px) saturate(210%);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 
-        0 12px 40px 0 rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+    /* Minimalist Navigation Overlay */
+    .clean-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    .dark .clean-nav {
+      background: rgba(18, 18, 20, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .dark .glass-nav {
-      background: rgba(15, 15, 20, 0.45);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    /* -------------------------------------------------------------
-       2. HOVER EFFECTS & GLOWS
-       ------------------------------------------------------------- */
-    .hover-glow:hover {
-      box-shadow: 
-        0 16px 48px 0 rgba(59, 130, 246, 0.3),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-      border-color: rgba(255, 255, 255, 0.8);
-      transform: translateY(-3px) scale(1.01);
-    }
-
-    .game-glow-efootball:hover {
-      box-shadow: 
-        0 16px 48px 0 rgba(37, 99, 235, 0.4),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-      border-color: rgba(59, 130, 246, 0.8);
-      transform: translateY(-3px) scale(1.01);
-    }
-
-    .game-glow-pubg:hover {
-      box-shadow: 
-        0 16px 48px 0 rgba(217, 119, 6, 0.4),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-      border-color: rgba(245, 158, 11, 0.8);
-      transform: translateY(-3px) scale(1.01);
-    }
-
-    /* -------------------------------------------------------------
-       3. ANIMATED BACKGROUND AMBIENT ORBS
-       ------------------------------------------------------------- */
-    @keyframes float-slow {
-      0%, 100% { transform: translate(0px, 0px) scale(1); }
-      50% { transform: translate(30px, -40px) scale(1.1); }
-    }
-    @keyframes float-reverse {
-      0%, 100% { transform: translate(0px, 0px) scale(1); }
-      50% { transform: translate(-30px, 40px) scale(1.15); }
-    }
-
-    .animate-orb-1 { animation: float-slow 12s ease-in-out infinite; }
-    .animate-orb-2 { animation: float-reverse 15s ease-in-out infinite; }
-    
-    /* -------------------------------------------------------------
-       4. CUSTOM SCROLLBAR
-       ------------------------------------------------------------- */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -134,195 +66,195 @@
       background: rgba(148, 163, 184, 0.5);
       border-radius: 9999px;
     }
-    .dark ::-webkit-scrollbar-thumb {
-      background: rgba(51, 65, 85, 0.5);
-    }
   </style>
 </head>
 
-<body class="bg-zinc-200 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 min-h-screen relative overflow-x-hidden">
-
-  <!-- BACKGROUND AMBIENT GLOW ORBS -->
-  <div class="fixed top-0 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 opacity-60 dark:opacity-40 rounded-full blur-[100px] pointer-events-none -z-10 animate-orb-1"></div>
-  <div class="fixed bottom-10 right-10 w-[500px] h-[500px] bg-gradient-to-br from-purple-600 via-pink-500 to-rose-400 opacity-55 dark:opacity-35 rounded-full blur-[110px] pointer-events-none -z-10 animate-orb-2"></div>
-  <div class="fixed top-1/2 left-10 w-[350px] h-[350px] bg-gradient-to-r from-emerald-500 to-teal-400 opacity-40 dark:opacity-25 rounded-full blur-[90px] pointer-events-none -z-10 animate-orb-1"></div>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 min-h-screen relative overflow-x-hidden antialiased">
 
   <!-- TOP SCROLL PROGRESS BAR -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-blue-500 z-50 transition-all duration-150" style="width: 0%;"></div>
+  <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-emerald-700 z-50 transition-all duration-150" style="width: 0%;"></div>
 
   <!-- TOAST NOTIFICATION -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-card text-zinc-900 dark:text-zinc-100 px-4 py-2.5 rounded-2xl shadow-2xl text-xs font-semibold flex items-center gap-2 pointer-events-none">
-    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 px-4 py-2.5 rounded-xl shadow-xl text-xs font-semibold flex items-center gap-2 pointer-events-none">
+    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
     <span id="toastMsg">Copied to clipboard!</span>
   </div>
 
   <!-- FIXED HEADER -->
-  <header class="fixed top-0 left-0 w-full z-40 glass-nav px-4 py-3">
+  <header class="fixed top-0 left-0 w-full z-40 clean-nav px-4 py-3">
     <div class="max-w-2xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_12px_#3b82f6]"></span>
-        <span class="font-semibold text-xs sm:text-sm tracking-tight text-zinc-800 dark:text-zinc-200">Biography & Portfolio</span>
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-700 animate-pulse"></span>
+        <span class="font-bold text-xs sm:text-sm tracking-tight text-zinc-800 dark:text-zinc-200">Biography & Portfolio</span>
       </div>
-      <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-full text-zinc-800 dark:text-zinc-200 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-200 hover:scale-110 active:scale-95">
-        <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
+      <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-full text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200">
+        <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
       </button>
     </div>
   </header>
 
   <!-- MAIN PORTFOLIO CONTAINER -->
-  <main class="max-w-2xl mx-auto px-4 pt-24 pb-16 space-y-12">
+  <main class="max-w-2xl mx-auto px-4 pt-28 pb-16 space-y-16">
 
-    <!-- =========================================================
-         SECTION 1: HERO CARD
-         ========================================================= -->
-    <section id="hero" class="glass-card p-6 sm:p-7 rounded-[32px] hover-glow space-y-6 relative overflow-hidden">
-      
-      <!-- Profile Photo Watermark in Card Background -->
-      <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-25 overflow-hidden flex items-center justify-end -mr-10">
-        <img src="Rooney.jpg" alt="" class="w-96 h-96 rounded-full object-cover blur-[2px] transform scale-110" />
-      </div>
-
-      <div class="relative z-10 flex items-center gap-5">
+    <!-- HERO -->
+    <section id="hero" class="space-y-6 text-center">
+      <div class="flex flex-col items-center justify-center gap-4">
         <div class="relative group shrink-0">
           <img 
             src="Rooney.jpg" 
             alt="Rooney"
-            class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-[center_top] ring-2 ring-white/60 dark:ring-white/20 transition-all duration-300 group-hover:scale-105 group-hover:ring-blue-500 shadow-xl"
+            class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-[center_top] ring-2 ring-emerald-700/40 shadow-md"
             onerror="this.src='https://placehold.co/200x200/1e293b/ffffff?text=Rooney'"
           />
-          <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-zinc-50 dark:border-zinc-950 rounded-full shadow-[0_0_10px_#10b981]" title="Active & Available"></span>
+          <span class="absolute bottom-0 right-1 w-4 h-4 bg-emerald-600 border-2 border-white dark:border-zinc-950 rounded-full" title="Active & Available"></span>
         </div>
         
-        <div class="space-y-1 min-w-0 flex-1">
-          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-normal text-zinc-900 dark:text-zinc-100 break-words">ROONEY</h1>
-          <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 break-words">
+        <div class="space-y-1">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">ROONEY</h1>
+          <p class="text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-500">
             Tall (6'2"), Majestic and Nonchalant.
           </p>
-          <div class="flex items-center gap-2 pt-0.5">
-            <p class="text-xs text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5 font-medium">
-              <i class="fa-solid fa-location-dot text-red-500"></i> Nairobi, Kenya
+          <div class="flex items-center justify-center gap-2 pt-1">
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 font-semibold flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Nairobi, Kenya
             </p>
           </div>
         </div>
       </div>
 
-      <p class="relative z-10 text-zinc-800 dark:text-zinc-200 leading-relaxed text-sm sm:text-base font-medium break-words">
+      <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm sm:text-base font-normal max-w-xl mx-auto">
         Student | Tech Enthusiast | Strategist | Godfather | Husband | Competitive Gamer | Leader | And a man with nothing to prove.
       </p>
     </section>
 
-    <!-- =========================================================
-         SECTION 2: LIFE JOURNEY
-         ========================================================= -->
-    <section id="life-journey" class="space-y-4">
-      <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-        <i class="fa-solid fa-route text-blue-500"></i> Life Journey
-      </h2>
+    <!-- LIFE JOURNEY -->
+    <section id="life-journey" class="space-y-8 text-center">
+      <div class="space-y-1">
+        <span class="text-[11px] font-bold tracking-widest uppercase text-emerald-700 dark:text-emerald-500">MY BIOGRAPHY</span>
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 uppercase flex items-center justify-center gap-2">
+          HISTORY
+        </h2>
+        <div class="w-20 h-0.5 bg-zinc-200 dark:bg-zinc-800 mx-auto mt-2"></div>
+      </div>
       
-      <div class="relative border-l-2 border-zinc-400/40 dark:border-zinc-700/50 ml-3 space-y-6">
+      <div class="relative max-w-xl mx-auto flex flex-col items-center">
         
-        <!-- Timeline Item 1 -->
-        <div class="relative pl-6 group">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-zinc-200 dark:ring-zinc-950 group-hover:scale-125 group-hover:bg-blue-500 transition-all duration-300"></span>
-          <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow">
-            <span class="text-xs font-semibold text-zinc-600 dark:text-zinc-400">Watch this !</span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mt-0.5 break-words">Quick breakthrough</h3>
-            <p class="text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 mt-1 leading-relaxed break-words">
-              DOB - 24th September 2004.<br>
-              Age - 22 Years<br>
-              Blood Group - O+<br>
-              Height - 6'2" (188cm)
-            </p>
-          </div>
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          Watch this !
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-2 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">Quick breakthrough</h3>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            Born in Nairobi, Mathare North area on
+            24th September 2004.<br>
+            Age - 22 Years<br>
+            Weight - 65kg<br>
+            Blood Group - O+<br>
+            Height - 6'2" (188cm)
+          </p>
         </div>
+        <div class="border-l-2 border-dashed border-emerald-700 h-8 my-1"></div>
 
-        <!-- Timeline Item 2 -->
-        <div class="relative pl-6 group">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-zinc-200 dark:ring-zinc-950 group-hover:scale-125 transition-transform duration-300 shadow-[0_0_12px_#3b82f6]"></span>
-          <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow">
-            <span class="text-xs font-semibold text-zinc-600 dark:text-zinc-400">2024 - PRESENT</span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mt-0.5 break-words">Refining Creative Tech & Esports Precision</h3>
-            <p class="text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 mt-1 leading-relaxed break-words">
-              Focusing on building minimal web software, publishing design insights, and sharpening competitive tactics in eFootball and PUBG Mobile tournaments.
-            </p>
-          </div>
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          2024 - PRESENT
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-2 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">Refining Creative Tech & Esports Precision</h3>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            Focusing on building minimal web software, publishing design insights, and sharpening competitive tactics in eFootball and PUBG Mobile tournaments.
+          </p>
         </div>
+        <div class="border-l-2 border-dashed border-emerald-700 h-8 my-1"></div>
 
-        <!-- Timeline Item 3 -->
-        <div class="relative pl-6 group">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-zinc-200 dark:ring-zinc-950 group-hover:scale-125 group-hover:bg-blue-500 transition-all duration-300"></span>
-          <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow">
-            <span class="text-xs font-semibold text-zinc-600 dark:text-zinc-400">2023 - 2024</span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mt-0.5 break-words">Stepping into Development & Strategy</h3>
-            <p class="text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 mt-1 leading-relaxed break-words">
-              Dived into frontend technologies, UI/UX fundamentals, and high-tier competitive gaming team coordination.
-            </p>
-          </div>
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          2023 - 2024
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-2 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">Stepping into Development & Strategy</h3>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            Dived into frontend technologies, UI/UX fundamentals, and high-tier competitive gaming team coordination.
+          </p>
         </div>
+        <div class="border-l-2 border-dashed border-emerald-700 h-8 my-1"></div>
 
-        <!-- Timeline Item 4 -->
-        <div class="relative pl-6 group">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-zinc-200 dark:ring-zinc-950 group-hover:scale-125 transition-transform duration-300 shadow-[0_0_12px_#3b82f6]"></span>
-          <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow">
-            <span class="text-xs font-semibold text-zinc-600 dark:text-zinc-400">Since Birth</span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mt-0.5 break-words">All time VYBZ KARTEL listener</h3>
-            <p class="text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 mt-1 leading-relaxed break-words">
-              A lifelong fan of VYBZ KARTEL's music, drawing inspiration from his lyrical prowess and storytelling in shaping my own creative and strategic mindset from Gospels such as "Which League", "Send A Hell", "You Make Me Cry", "Fever", "Clarks" and "Summertime".
-            </p>
-          </div>
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          Since Birth
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-2 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">All time VYBZ KARTEL listener</h3>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            A lifelong fan of VYBZ KARTEL's music, drawing inspiration from his lyrical prowess and storytelling in shaping my own creative and strategic mindset from Gospels such as "Which League", "Send A Hell", "You Make Me Cry", "Fever", "Clarks" and "Summertime".
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 3: EDUCATION BACKGROUND
-         ========================================================= -->
-    <section id="education" class="space-y-4">
-      <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-        <i class="fa-solid fa-graduation-cap text-blue-500"></i> Education Background
-      </h2>
+    <!-- EDUCATION -->
+    <section id="education" class="space-y-8 text-center">
+      <div class="space-y-1">
+        <span class="text-[11px] font-bold tracking-widest uppercase text-emerald-700 dark:text-emerald-500">ACADEMICS</span>
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 uppercase flex items-center justify-center gap-2">
+          EDUCATION BACKGROUND
+        </h2>
+        <div class="w-20 h-0.5 bg-zinc-200 dark:bg-zinc-800 mx-auto mt-2"></div>
+      </div>
       
-      <div class="grid grid-cols-1 gap-4">
+      <div class="relative max-w-xl mx-auto flex flex-col items-center">
         
-        <!-- University -->
-        <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow transition-all duration-200 overflow-hidden">
-          <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <div class="min-w-0 pr-2">
-              <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-snug break-words">B.Sc. in Computer Science (Degree)</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 font-medium mt-0.5 break-words">Kisii University</p>
-            </div>
-            <span class="shrink-0 text-[10px] font-semibold px-3 py-1 rounded-full glass-card text-zinc-800 dark:text-zinc-200 whitespace-nowrap">2023 - Present</span>
-          </div>
-          <p class="text-xs text-zinc-800 dark:text-zinc-200 mt-3 leading-relaxed break-words">
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          2023 - Present
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-1.5 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">B.Sc. in Computer Science (Degree)</h3>
+          <p class="text-xs font-semibold text-emerald-700 dark:text-emerald-500">Kisii University</p>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed pt-1">
             Specializing in web application development, interactive design systems, and network communication fundamentals.
           </p>
         </div>
+        <div class="border-l-2 border-dashed border-emerald-700 h-8 my-1"></div>
 
-        <!-- High School -->
-        <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow transition-all duration-200 overflow-hidden">
-          <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <div class="min-w-0 pr-2">
-              <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-snug break-words">High School (KCSE)</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 font-medium mt-0.5 break-words">Kanga High School</p>
-            </div>
-            <span class="shrink-0 text-[10px] font-semibold px-3 py-1 rounded-full glass-card text-zinc-800 dark:text-zinc-200 whitespace-nowrap">2019 - 2022</span>
-          </div>
-          <p class="text-xs text-zinc-800 dark:text-zinc-200 mt-3 leading-relaxed break-words">
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          2019 - 2022
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-1.5 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">High School (KCSE)</h3>
+          <p class="text-xs font-semibold text-emerald-700 dark:text-emerald-500">Kanga High School</p>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed pt-1">
             Strong emphasis on Mathematics, Physics, Chemistry and early Computer Studies.
           </p>
         </div>
+        <div class="border-l-2 border-dashed border-emerald-700 h-8 my-1"></div>
 
-        <!-- Primary School -->
-        <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow transition-all duration-200 overflow-hidden">
-          <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <div class="min-w-0 pr-2">
-              <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-snug break-words">Primary School (KCPE)</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 font-medium mt-0.5 break-words">Missions Of Hope International</p>
-            </div>
-            <span class="shrink-0 text-[10px] font-semibold px-3 py-1 rounded-full glass-card text-zinc-800 dark:text-zinc-200 whitespace-nowrap">2009 - 2018</span>
-          </div>
-          <p class="text-xs text-zinc-800 dark:text-zinc-200 mt-3 leading-relaxed break-words">
+        <span class="bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-lg shadow-sm z-10">
+          2009 - 2018
+        </span>
+        <div class="border-l-2 border-dashed border-emerald-700 h-6 my-1"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-700 z-10 ring-4 ring-white dark:ring-zinc-950"></div>
+        
+        <div class="space-y-1.5 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">Primary School (KCPE)</h3>
+          <p class="text-xs font-semibold text-emerald-700 dark:text-emerald-500">Missions Of Hope International</p>
+          <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed pt-1">
             Nothing much I did in Primary School, Just playing all around.
           </p>
         </div>
@@ -330,91 +262,85 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 4: GAMING EXPERIENCE
-         ========================================================= -->
-    <section id="gaming" class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-          <i class="fa-solid fa-gamepad text-emerald-500"></i> Gaming Experience
+    <!-- GAMING EXPERIENCE -->
+    <section id="gaming" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3">
+        <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+          Gaming Experience
         </h2>
-        <span class="text-[11px] font-semibold px-3 py-1 rounded-full glass-card text-emerald-600 dark:text-emerald-400">Click to View Screenshots</span>
+        <span class="text-[11px] font-bold px-3 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">Tap for Proof</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <!-- eFootball Card -->
-        <div onclick="openGameModal('efootball')" class="glass-card p-5 sm:p-6 rounded-[28px] game-glow-efootball transition-all duration-300 relative overflow-hidden group cursor-pointer">
+        <div onclick="openGameModal('efootball')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700 transition-all duration-300 relative overflow-hidden group cursor-pointer">
           <div class="flex items-center gap-3 mb-4">
             <img 
               src="efootball-icon.png" 
               alt="eFootball Mobile Icon" 
-              class="w-12 h-12 rounded-2xl object-cover shadow-lg ring-1 ring-white/30 group-hover:scale-110 transition-transform duration-300 shrink-0"
+              class="w-12 h-12 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800 group-hover:scale-105 transition-transform duration-300 shrink-0"
               onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=eFootball'"
             />
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5">
-                <h3 class="text-sm font-bold tracking-wide text-zinc-900 dark:text-zinc-100 break-words">eFootball™ Mobile</h3>
-                <i class="fa-solid fa-circle-check text-blue-500 text-xs shrink-0"></i>
+                <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100">eFootball™ Mobile</h3>
               </div>
-              <p class="text-[11px] text-blue-600 dark:text-blue-400 font-semibold break-words">eFootball™ League Maestro</p>
+              <p class="text-[11px] text-blue-600 dark:text-blue-400 font-bold">eFootball™ League Maestro</p>
             </div>
           </div>
 
           <div class="space-y-2.5 text-xs">
-            <div class="flex justify-between items-center border-b border-white/20 dark:border-white/10 pb-1.5 gap-2">
-              <span class="text-zinc-700 dark:text-zinc-300 font-medium shrink-0">Highest Rank</span>
-              <span class="font-bold text-blue-600 dark:text-blue-400 glass-card px-2 py-0.5 rounded-full text-right break-words">Division 1 (26,479)</span>
+            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
+              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Highest Rank</span>
+              <span class="font-bold text-blue-600 dark:text-blue-400">Division 1 (26,479)</span>
             </div>
-            <div class="flex justify-between items-center border-b border-white/20 dark:border-white/10 pb-1.5 gap-2">
-              <span class="text-zinc-700 dark:text-zinc-300 font-medium shrink-0">Playstyle</span>
-              <span class="font-semibold text-zinc-900 dark:text-zinc-100 text-right break-words">Long Ball & Quick Counter</span>
+            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
+              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Playstyle</span>
+              <span class="font-bold text-zinc-800 dark:text-zinc-200">LB Counter & Quick Counter</span>
             </div>
-            <div class="flex justify-between items-center border-b border-white/20 dark:border-white/10 pb-1.5 gap-2">
-              <span class="text-zinc-700 dark:text-zinc-300 font-medium shrink-0">Squad Rating</span>
-              <span class="font-bold text-emerald-600 dark:text-emerald-400 text-right">3250</span>
+            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
+              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Squad Rating</span>
+              <span class="font-bold text-emerald-700 dark:text-emerald-400">3250</span>
             </div>
-            <div class="flex justify-between items-center text-[11px] text-blue-600 dark:text-blue-400 font-semibold pt-1">
+            <div class="flex justify-between items-center text-[11px] text-blue-600 dark:text-blue-400 font-bold pt-1">
               <span>View Squad & Badge Proof</span>
-              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform shrink-0"></i>
+              <span>&rarr;</span>
             </div>
           </div>
         </div>
 
-        <!-- PUBG Mobile Card -->
-        <div onclick="openGameModal('pubg')" class="glass-card p-5 sm:p-6 rounded-[28px] game-glow-pubg transition-all duration-300 relative overflow-hidden group cursor-pointer">
+        <div onclick="openGameModal('pubg')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-amber-600 transition-all duration-300 relative overflow-hidden group cursor-pointer">
           <div class="flex items-center gap-3 mb-4">
             <img 
               src="pubg-icon.png" 
               alt="PUBG Mobile Icon" 
-              class="w-12 h-12 rounded-2xl object-cover shadow-lg ring-1 ring-white/30 group-hover:scale-110 transition-transform duration-300 shrink-0"
+              class="w-12 h-12 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800 group-hover:scale-105 transition-transform duration-300 shrink-0"
               onerror="this.src='https://placehold.co/100x100/d97706/ffffff?text=PUBG'"
             />
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5">
-                <h3 class="text-sm font-bold tracking-wide text-zinc-900 dark:text-zinc-100 break-words">PUBG MOBILE</h3>
-                <i class="fa-solid fa-fire text-amber-500 text-xs shrink-0"></i>
+                <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100">PUBG MOBILE</h3>
               </div>
-              <p class="text-[11px] text-amber-600 dark:text-amber-400 font-semibold break-words">Tactical Ultimate Royale</p>
+              <p class="text-[11px] text-amber-600 dark:text-amber-400 font-bold">Tactical Ultimate Royale</p>
             </div>
           </div>
 
           <div class="space-y-2.5 text-xs">
-            <div class="flex justify-between items-center border-b border-white/20 dark:border-white/10 pb-1.5 gap-2">
-              <span class="text-zinc-700 dark:text-zinc-300 font-medium shrink-0">Peak Rank</span>
-              <span class="font-bold text-amber-600 dark:text-amber-400 glass-card px-2 py-0.5 rounded-full text-right break-words">Conqueror</span>
+            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
+              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Peak Rank</span>
+              <span class="font-bold text-amber-600 dark:text-amber-400">Conqueror</span>
             </div>
-            <div class="flex justify-between items-center border-b border-white/20 dark:border-white/10 pb-1.5 gap-2">
-              <span class="text-zinc-700 dark:text-zinc-300 font-medium shrink-0">In-Game Role</span>
-              <span class="font-semibold text-zinc-900 dark:text-zinc-100 text-right break-words">Assaulter & Sniper</span>
+            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
+              <span class="text-zinc-600 dark:text-zinc-400 font-medium">In-Game Role</span>
+              <span class="font-bold text-zinc-800 dark:text-zinc-200">Assaulter & Sniper</span>
             </div>
-            <div class="flex justify-between items-center border-b border-white/20 dark:border-white/10 pb-1.5 gap-2">
-              <span class="text-zinc-700 dark:text-zinc-300 font-medium shrink-0">Favorite Guns</span>
-              <span class="font-semibold text-amber-600 dark:text-amber-400 text-right break-words">M416 / AUG + AWM</span>
+            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
+              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Favorite Guns</span>
+              <span class="font-bold text-amber-600 dark:text-amber-400">M416 / AUG + AWM</span>
             </div>
-            <div class="flex justify-between items-center text-[11px] text-amber-600 dark:text-amber-400 font-semibold pt-1">
+            <div class="flex justify-between items-center text-[11px] text-amber-600 dark:text-amber-400 font-bold pt-1">
               <span>View Tier & Highlights</span>
-              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform shrink-0"></i>
+              <span>&rarr;</span>
             </div>
           </div>
         </div>
@@ -422,230 +348,212 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 5: CREATIVE WORK & PROJECTS
-         ========================================================= -->
+    <!-- CREATIVE WORK & PROJECTS -->
     <section id="projects" class="space-y-4">
-      <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-        <i class="fa-solid fa-code text-indigo-500"></i> Creative Work & Projects
+      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+        Creative Work & Projects
       </h2>
 
       <div class="grid grid-cols-1 gap-4">
-        <!-- Project 1 -->
-        <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow transition-all duration-200 space-y-2.5 overflow-hidden">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-2.5">
           <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-snug break-words pr-2">
+            <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
               Minimal Web Layouts & Micro-Apps
             </h3>
-            <span class="shrink-0 text-[10px] font-semibold px-3 py-1 rounded-full glass-card text-blue-600 dark:text-blue-400 whitespace-nowrap">Active</span>
+            <span class="shrink-0 text-[10px] font-bold px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400">Active</span>
           </div>
-          <p class="text-xs text-zinc-800 dark:text-zinc-200 leading-relaxed break-words">
+          <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
             Building lightweight, high-performance web templates that load instantaneously and offer clean typography-driven user experiences.
           </p>
         </div>
 
-        <!-- Project 2 -->
-        <div class="glass-card p-5 sm:p-6 rounded-2xl hover-glow transition-all duration-200 space-y-2.5 overflow-hidden">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-2.5">
           <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-snug break-words pr-2">
+            <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
               Esports Gameplay Clips & Edits
             </h3>
-            <span class="shrink-0 text-[10px] font-semibold px-3 py-1 rounded-full glass-card text-emerald-600 dark:text-emerald-400 whitespace-nowrap">Creative</span>
+            <span class="shrink-0 text-[10px] font-bold px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">Creative</span>
           </div>
-          <p class="text-xs text-zinc-800 dark:text-zinc-200 leading-relaxed break-words">
+          <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
             Editing high-octane eFootball match highlights and PUBG Mobile clutches with smooth transitions and synchronized audio beat matches.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 6: PHILOSOPHY & CORE PRINCIPLES
-         ========================================================= -->
+    <!-- PHILOSOPHY & CORE PRINCIPLES -->
     <section id="philosophy" class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-          <i class="fa-solid fa-lightbulb text-amber-500"></i> Philosophy & Core Principles
-        </h2>
-      </div>
+      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+        Philosophy & Core Principles
+      </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="glass-card p-5 rounded-2xl hover-glow space-y-1 overflow-hidden">
-          <div class="text-blue-500 mb-1"><i class="fa-solid fa-feather text-base"></i></div>
-          <h3 class="text-xs font-bold text-zinc-900 dark:text-zinc-100 break-words">SELF-RESPECT</h3>
-          <p class="text-[11px] text-zinc-700 dark:text-zinc-300 leading-relaxed break-words">Never lose yourself trying to be someone else.</p>
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-1">
+          <h3 class="text-xs font-extrabold text-zinc-900 dark:text-zinc-100">SELF-RESPECT</h3>
+          <p class="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Never lose yourself trying to be someone else.</p>
         </div>
 
-        <div class="glass-card p-5 rounded-2xl hover-glow space-y-1 overflow-hidden">
-          <div class="text-emerald-500 mb-1"><i class="fa-solid fa-chart-line text-base"></i></div>
-          <h3 class="text-xs font-bold text-zinc-900 dark:text-zinc-100 break-words">LOYALTY</h3>
-          <p class="text-[11px] text-zinc-700 dark:text-zinc-300 leading-relaxed break-words">Give genuine commitment, but expect it to be mutual.</p>
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-1">
+          <h3 class="text-xs font-extrabold text-zinc-900 dark:text-zinc-100">LOYALTY</h3>
+          <p class="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Give genuine commitment, but expect it to be mutual.</p>
         </div>
 
-        <div class="glass-card p-5 rounded-2xl hover-glow space-y-1 overflow-hidden">
-          <div class="text-purple-500 mb-1"><i class="fa-solid fa-bullseye text-base"></i></div>
-          <h3 class="text-xs font-bold text-zinc-900 dark:text-zinc-100 break-words">PURPOSE</h3>
-          <p class="text-[11px] text-zinc-700 dark:text-zinc-300 leading-relaxed break-words">Have directions, maintain your standards, and keep growing.</p>
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-1">
+          <h3 class="text-xs font-extrabold text-zinc-900 dark:text-zinc-100">PURPOSE</h3>
+          <p class="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Have directions, maintain your standards, and keep growing.</p>
         </div>
       </div>
 
-      <!-- Gaza World Boss Motto Banner with Auto Fade Transitions -->
-      <div class="glass-card p-5 rounded-2xl flex items-center gap-3 overflow-hidden">
-        <i class="fa-solid fa-quote-left text-amber-500 text-lg shrink-0"></i>
-        <p id="kartelQuote" class="text-xs italic text-zinc-800 dark:text-zinc-200 transition-opacity duration-700 opacity-100 font-medium break-words leading-relaxed">
+      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center gap-3">
+        <span class="text-emerald-700 text-lg font-bold shrink-0">&ldquo;</span>
+        <p id="kartelQuote" class="text-xs italic text-zinc-700 dark:text-zinc-300 transition-opacity duration-700 opacity-100 font-semibold leading-relaxed">
           "I will be here as always I have been." — The Godfather
         </p>
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 7: HOBBIES & TECH STACK
-         ========================================================= -->
+    <!-- HOBBIES & TECH STACK -->
     <section id="hobbies-tech" class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-          <i class="fa-solid fa-laptop-code text-purple-500"></i> Hobbies & Tech Stack
+      <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3">
+        <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+          Hobbies & Tech Stack
         </h2>
-        <span class="text-[11px] font-semibold px-3 py-1 rounded-full glass-card text-purple-600 dark:text-purple-400">Click Any Badge</span>
+        <span class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-400">Click Any Badge</span>
       </div>
 
-      <div class="glass-card p-5 rounded-2xl hover-glow space-y-3 overflow-hidden">
+      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-3">
         <div class="flex flex-wrap gap-2">
           
-          <button onclick="openTechModal('html')" class="px-3.5 py-2 text-xs rounded-2xl glass-card text-zinc-800 dark:text-zinc-200 font-medium flex items-center gap-2 hover:scale-105 hover:text-orange-500 transition-all duration-200 cursor-pointer">
-            <i class="fa-brands fa-html5 text-orange-500 text-sm"></i> HTML5 / CSS3
+          <button onclick="openTechModal('html')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-orange-500 transition-all duration-200 cursor-pointer">
+            <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 19.5h20L12 2zm0 4l6.5 11.5h-13L12 6z"/></svg> HTML5 / CSS3
           </button>
 
-          <button onclick="openTechModal('adventure')" class="px-3.5 py-2 text-xs rounded-2xl glass-card text-zinc-800 dark:text-zinc-200 font-medium flex items-center gap-2 hover:scale-105 hover:text-yellow-500 transition-all duration-200 cursor-pointer">
-            <i class="fa-solid fa-plane text-yellow-500 text-sm"></i> Adventure
+          <button onclick="openTechModal('adventure')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-yellow-500 transition-all duration-200 cursor-pointer">
+            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg> Adventure
           </button>
 
-          <button onclick="openTechModal('music')" class="px-3.5 py-2 text-xs rounded-2xl glass-card text-zinc-800 dark:text-zinc-200 font-medium flex items-center gap-2 hover:scale-105 hover:text-blue-500 transition-all duration-200 cursor-pointer">
-            <i class="fa-solid fa-music text-blue-500 text-sm"></i> Kartel Music
+          <button onclick="openTechModal('music')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-blue-500 transition-all duration-200 cursor-pointer">
+            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Kartel Music
           </button>
           
-          <button onclick="openTechModal('games')" class="px-3.5 py-2 text-xs rounded-2xl glass-card text-zinc-800 dark:text-zinc-200 font-medium flex items-center gap-2 hover:scale-105 hover:text-emerald-500 transition-all duration-200 cursor-pointer">
-            <i class="fa-brands fa-playstation text-emerald-500 text-sm"></i> Video Games
+          <button onclick="openTechModal('games')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-emerald-500 transition-all duration-200 cursor-pointer">
+            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H9v2H7v-2H5v-2h2V9h2v2h2v2zm4.5 1c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg> Video Games
           </button>
 
-          <button onclick="openTechModal('vscode')" class="px-3.5 py-2 text-xs rounded-2xl glass-card text-zinc-800 dark:text-zinc-200 font-medium flex items-center gap-2 hover:scale-105 hover:text-indigo-500 transition-all duration-200 cursor-pointer">
-            <i class="fa-solid fa-code text-indigo-500 text-sm"></i> VS Code
+          <button onclick="openTechModal('vscode')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-indigo-500 transition-all duration-200 cursor-pointer">
+            <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg> VS Code
           </button>
 
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 8: LET'S CONNECT (SQUARE SOCIAL GRID)
-         ========================================================= -->
-    <section id="connect" class="pt-8 border-t border-zinc-400/30 dark:border-zinc-800/60 space-y-5 text-center">
-      <h2 class="text-xs font-semibold tracking-widest uppercase text-zinc-600 dark:text-zinc-400">
-        Let's Connect
+    <!-- LET'S CONNECT (PURE INLINE SVG LOGOS) -->
+    <section id="connect" class="pt-8 border-t border-zinc-200 dark:border-zinc-800 space-y-5 text-center">
+      <h2 class="text-xs font-extrabold tracking-widest uppercase text-zinc-500 dark:text-zinc-400">
+        LET'S CONNECT
       </h2>
 
       <div class="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 max-w-md sm:max-w-xl mx-auto px-2">
         
+        <!-- Twitter / X -->
         <a href="https://twitter.com/GODFATHER_LLC" target="_blank" rel="noopener" aria-label="Twitter X" onclick="triggerToast('Opening Twitter...')"
-           class="aspect-square flex flex-col items-center justify-center p-3 rounded-2xl glass-card hover-glow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:scale-105 group">
-          <i class="fa-brands fa-x-twitter text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-          <span class="text-[10px] font-semibold tracking-tight">Twitter / X</span>
+           class="aspect-square flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 text-zinc-800 dark:text-zinc-200 hover:scale-105 group">
+          <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          <span class="text-[10px] font-bold tracking-tight">Twitter / X</span>
         </a>
 
+        <!-- Instagram -->
         <a href="https://instagram.com/_r00n3y_" target="_blank" rel="noopener" aria-label="Instagram" onclick="triggerToast('Opening Instagram...')"
-           class="aspect-square flex flex-col items-center justify-center p-3 rounded-2xl glass-card hover-glow hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:scale-105 group">
-          <i class="fa-brands fa-instagram text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-          <span class="text-[10px] font-semibold tracking-tight">Instagram</span>
+           class="aspect-square flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 hover:scale-105 group">
+          <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span class="text-[10px] font-bold tracking-tight">Instagram</span>
         </a>
 
+        <!-- WhatsApp -->
         <a href="https://wa.me/+254797959452" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="triggerToast('Opening WhatsApp...')"
-           class="aspect-square flex flex-col items-center justify-center p-3 rounded-2xl glass-card hover-glow hover:bg-emerald-600 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:scale-105 group">
-          <i class="fa-brands fa-whatsapp text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-          <span class="text-[10px] font-semibold tracking-tight">WhatsApp</span>
+           class="aspect-square flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-emerald-600 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 hover:scale-105 group">
+          <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span class="text-[10px] font-bold tracking-tight">WhatsApp</span>
         </a>
 
+        <!-- TikTok -->
         <a href="https://tiktok.com/@godfather.llc" target="_blank" rel="noopener" aria-label="TikTok" onclick="triggerToast('Opening TikTok...')"
-           class="aspect-square flex flex-col items-center justify-center p-3 rounded-2xl glass-card hover-glow hover:bg-black hover:text-white dark:hover:bg-zinc-800 transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:scale-105 group">
-          <i class="fa-brands fa-tiktok text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-          <span class="text-[10px] font-semibold tracking-tight">TikTok</span>
+           class="aspect-square flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-black hover:text-white dark:hover:bg-zinc-800 transition-all duration-200 text-zinc-800 dark:text-zinc-200 hover:scale-105 group">
+          <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.55-1.3 2.53-.02 1.03.43 2.06 1.22 2.71.8.68 1.93.93 2.94.72.96-.18 1.81-.82 2.27-1.68.32-.58.46-1.26.45-1.92.01-4.43 0-8.86.01-13.29z"/>
+          </svg>
+          <span class="text-[10px] font-bold tracking-tight">TikTok</span>
         </a>
 
+        <!-- Facebook -->
         <a href="https://facebook.com/Rooney Cgh" target="_blank" rel="noopener" aria-label="Facebook" onclick="triggerToast('Opening Facebook...')"
-           class="aspect-square flex flex-col items-center justify-center p-3 rounded-2xl glass-card hover-glow hover:bg-blue-600 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:scale-105 group">
-          <i class="fa-brands fa-facebook-f text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-          <span class="text-[10px] font-semibold tracking-tight">Facebook</span>
+           class="aspect-square flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-blue-600 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 hover:scale-105 group">
+          <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span class="text-[10px] font-bold tracking-tight">Facebook</span>
         </a>
 
+        <!-- Email -->
         <a href="mailto:your.itsrooney7@gmail.com" aria-label="Email" onclick="triggerToast('Opening Email...')"
-           class="aspect-square flex flex-col items-center justify-center p-3 rounded-2xl glass-card hover-glow hover:bg-red-500 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:scale-105 group">
-          <i class="fa-solid fa-envelope text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-          <span class="text-[10px] font-semibold tracking-tight">Email</span>
+           class="aspect-square flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-red-500 hover:text-white transition-all duration-200 text-zinc-800 dark:text-zinc-200 hover:scale-105 group">
+          <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <span class="text-[10px] font-bold tracking-tight">Email</span>
         </a>
 
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION 9: FOOTER
-         ========================================================= -->
-    <footer class="text-center pt-8 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
+    <!-- FOOTER -->
+    <footer class="text-center pt-8 text-xs font-bold text-zinc-500 dark:text-zinc-400">
       <p>© <span id="year"></span> GODFATHER LLC. All rights reserved.</p>
     </footer>
 
   </main>
 
-  <!-- =========================================================
-       DYNAMIC SHOWCASE MODAL CONTAINER (Gaming Screenshots & Videos)
-       ========================================================= -->
-  <div id="gameModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-2xl hidden items-center justify-center p-4">
-    <div class="glass-card max-w-lg w-full p-6 rounded-[32px] space-y-4 relative max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center pb-3 border-b border-white/20 dark:border-white/10">
-        <h3 id="modalTitle" class="text-sm font-bold tracking-tight text-zinc-900 dark:text-zinc-100 break-words pr-2">Showcase Overlay</h3>
-        <button onclick="closeGameModal()" class="text-zinc-400 hover:text-zinc-100 p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0">
-          <i class="fa-solid fa-xmark text-lg"></i>
+  <!-- SHOWCASE MODAL -->
+  <div id="gameModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 max-w-lg w-full p-6 rounded-2xl space-y-4 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div class="flex justify-between items-center pb-3 border-b border-zinc-200 dark:border-zinc-800">
+        <h3 id="modalTitle" class="text-sm font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Showcase Overlay</h3>
+        <button onclick="closeGameModal()" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 p-1.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all">
+          &times;
         </button>
       </div>
 
-      <div id="modalImages" class="space-y-3">
-        <!-- Filled dynamically by JavaScript -->
-      </div>
+      <div id="modalImages" class="space-y-3"></div>
     </div>
   </div>
 
-  <!-- =========================================================
-       FULLSCREEN ZOOM MODAL OVERLAY (For Photos)
-       ========================================================= -->
-  <div id="fullscreenZoom" onclick="closeZoom()" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 cursor-zoom-out backdrop-blur-2xl">
-    <img id="zoomedImg" src="" alt="Zoomed View" class="max-w-full max-h-full rounded-2xl object-contain shadow-2xl border border-white/20" />
+  <!-- FULLSCREEN ZOOM -->
+  <div id="fullscreenZoom" onclick="closeZoom()" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 cursor-zoom-out">
+    <img id="zoomedImg" src="" alt="Zoomed View" class="max-w-full max-h-full rounded-xl object-contain shadow-2xl border border-zinc-800" />
   </div>
 
-  <!-- =========================================================
-       JAVASCRIPT LOGIC
-       ========================================================= -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // 1. Set Copyright Year Automatically
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Theme Toggle Handler
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.classList.add('dark');
-      themeIcon.className = 'fa-solid fa-sun text-base';
     }
 
     themeToggleBtn.addEventListener('click', () => {
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        themeIcon.className = 'fa-solid fa-moon text-base';
-      } else {
-        document.documentElement.classList.add('dark');
-        themeIcon.className = 'fa-solid fa-sun text-base';
-      }
+      document.documentElement.classList.toggle('dark');
     });
 
-    // 3. Scroll Progress Indicator Bar
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -653,7 +561,6 @@
       document.getElementById('scroll-progress').style.width = scrollPercent + '%';
     });
 
-    // 4. Toast Notification Trigger
     function triggerToast(text) {
       const toast = document.getElementById('toast');
       document.getElementById('toastMsg').textContent = text;
@@ -663,7 +570,6 @@
       }, 2500);
     }
 
-    // 5. Gaming Proof Image Showcase Modal
     function openGameModal(gameType) {
       const modal = document.getElementById('gameModal');
       const modalTitle = document.getElementById('modalTitle');
@@ -673,24 +579,24 @@
         modalTitle.textContent = 'eFootball™ Mobile — Division 1 & Team Setup';
         modalImages.innerHTML = `
           <div class="space-y-2">
-            <p class="text-xs text-zinc-400 font-semibold">1. Starting XI & Team Rating (Tap to Zoom)</p>
-            <img src="efootball 1.jpg" onclick="zoomImage(this.src)" alt="eFootball Squad" class="w-full rounded-2xl object-cover ring-1 ring-blue-500/40 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+1.jpg+Not+Found'" />
+            <p class="text-xs text-zinc-500 font-bold">1. Starting XI & Team Rating (Tap to Zoom)</p>
+            <img src="efootball 1.jpg" onclick="zoomImage(this.src)" alt="eFootball Squad" class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+1.jpg+Not+Found'" />
           </div>
           <div class="space-y-2 pt-2">
-            <p class="text-xs text-zinc-400 font-semibold">2. Division 1 Highest Badge (Tap to Zoom)</p>
-            <img src="efootball 2.jpg" onclick="zoomImage(this.src)" alt="eFootball Division 1 Rank" class="w-full rounded-2xl object-cover ring-1 ring-blue-500/40 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+2.jpg+Not+Found'" />
+            <p class="text-xs text-zinc-500 font-bold">2. My Division 1 Badges (Tap to Zoom)</p>
+            <img src="efootball 2.jpg" onclick="zoomImage(this.src)" alt="eFootball Division 1 Rank" class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+2.jpg+Not+Found'" />
           </div>
         `;
       } else if (gameType === 'pubg') {
-        modalTitle.textContent = 'PUBG MOBILE — Conqueror Rank & Loadout';
+        modalTitle.textContent = 'PUBG MOBILE — Check out my skin (I don\'t play pubg that much)';
         modalImages.innerHTML = `
           <div class="space-y-2">
-            <p class="text-xs text-zinc-400 font-semibold">1. Conqueror Badge & Statistics (Tap to Zoom)</p>
-            <img src="pubg 1.jpg" onclick="zoomImage(this.src)" alt="PUBG Conqueror Badge" class="w-full rounded-2xl object-cover ring-1 ring-amber-500/40 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+1.jpg+Not+Found'" />
+            <p class="text-xs text-zinc-500 font-bold">1. Conqueror Badge & Statistics. (Tap to Zoom)</p>
+            <img src="pubg 1.jpg" onclick="zoomImage(this.src)" alt="PUBG Conqueror Badge" class="w-full rounded-xl object-cover ring-1 ring-amber-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+1.jpg+Not+Found'" />
           </div>
           <div class="space-y-2 pt-2">
-            <p class="text-xs text-zinc-400 font-semibold">2. In-Game Controls & Sensitivity Setup (Tap to Zoom)</p>
-            <img src="pubg 2.jpg" onclick="zoomImage(this.src)" alt="PUBG Gameplay Setup" class="w-full rounded-2xl object-cover ring-1 ring-amber-500/40 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+2.jpg+Not+Found'" />
+            <p class="text-xs text-zinc-500 font-bold">2. I'll upload my sensitivity settings on 12/12/2026. (Tap to Zoom)</p>
+            <img src="pubg 2.jpg" onclick="zoomImage(this.src)" alt="PUBG Gameplay Setup" class="w-full rounded-xl object-cover ring-1 ring-amber-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+2.jpg+Not+Found'" />
           </div>
         `;
       }
@@ -699,95 +605,59 @@
       modal.classList.add('flex');
     }
 
-    // 6. Hobbies & Tech Stack Video Players Showcase Modal
     function openTechModal(type) {
       const modal = document.getElementById('gameModal');
       const modalTitle = document.getElementById('modalTitle');
       const modalImages = document.getElementById('modalImages');
 
       if (type === 'games') {
-        modalTitle.textContent = 'Gaming Rig & Battlestation — Video Games';
+        modalTitle.textContent = 'Gaming Rig & Battlestation — Video Games (I\'m straight btw)';
         modalImages.innerHTML = `
           <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-2xl object-cover ring-1 ring-emerald-500/40 shadow-lg">
+            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 shadow-md">
               <source src="gaming-setup.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="space-y-1.5 text-xs text-zinc-300">
-              <span class="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Required Video Asset: gaming-setup.mp4</span>
-              <h4 class="font-bold text-emerald-400 text-sm">Competitive Battlestation</h4>
-              <p class="text-zinc-400 leading-relaxed break-words">
-                Custom competitive rig fine-tuned for low latency, high audio feedback, and split-second reflexes in eFootball™ and PUBG Mobile tournaments.
-              </p>
-            </div>
           </div>
         `;
       } else if (type === 'html') {
-        modalTitle.textContent = 'HTML5 / CSS3 Web Development';
+        modalTitle.textContent = 'HTML5 / CSS3 Web Development (Just for fun)';
         modalImages.innerHTML = `
           <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-2xl object-cover ring-1 ring-orange-500/40 shadow-lg">
+            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-orange-500/30 shadow-md">
               <source src="html5-css3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="space-y-1.5 text-xs text-zinc-300">
-              <span class="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Required Video Asset: html5-css3.mp4</span>
-              <h4 class="font-bold text-orange-400 text-sm">Frontend Engineering</h4>
-              <p class="text-zinc-400 leading-relaxed break-words">
-                Clean, single-file glassmorphism layout construction using Tailwind CSS and semantic HTML5 for lightning-fast web pages.
-              </p>
-            </div>
           </div>
         `;
       } else if (type === 'adventure') {
-        modalTitle.textContent = 'Travel & Outdoor Adventure';
+        modalTitle.textContent = 'Travel & Outdoor Adventure (Waiyaki way)';
         modalImages.innerHTML = `
           <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-2xl object-cover ring-1 ring-yellow-500/40 shadow-lg">
+            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-yellow-500/30 shadow-md">
               <source src="adventure.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="space-y-1.5 text-xs text-zinc-300">
-              <span class="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Required Video Asset: adventure.mp4</span>
-              <h4 class="font-bold text-yellow-400 text-sm">Exploration & Nature</h4>
-              <p class="text-zinc-400 leading-relaxed break-words">
-                Taking breaks from tech work and esports to travel across Kenya and connect with the outdoors.
-              </p>
-            </div>
           </div>
         `;
       } else if (type === 'music') {
         modalTitle.textContent = 'Vybz Kartel Playlist';
         modalImages.innerHTML = `
           <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-2xl object-cover ring-1 ring-blue-500/40 shadow-lg">
+            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-blue-500/30 shadow-md">
               <source src="kartel-music.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="space-y-1.5 text-xs text-zinc-300">
-              <span class="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Required Video Asset: kartel-music.mp4</span>
-              <h4 class="font-bold text-blue-400 text-sm">Gaza World Boss Mindset</h4>
-              <p class="text-zinc-400 leading-relaxed break-words">
-                Lifelong music inspiration drawn from tracks like "Which League", "Send A Hell", "You Make Me Cry", "Fever", "Clarks", and "Summertime".
-              </p>
-            </div>
           </div>
         `;
       } else if (type === 'vscode') {
-        modalTitle.textContent = 'VS Code Development Environment';
+        modalTitle.textContent = 'VS Code Development Environment (My humor)';
         modalImages.innerHTML = `
           <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-2xl object-cover ring-1 ring-indigo-500/40 shadow-lg">
+            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-indigo-500/30 shadow-md">
               <source src="vscode-setup.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="space-y-1.5 text-xs text-zinc-300">
-              <span class="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Required Video Asset: vscode-setup.mp4</span>
-              <h4 class="font-bold text-indigo-400 text-sm">Editor Customization</h4>
-              <p class="text-zinc-400 leading-relaxed break-words">
-                Customized VS Code workspace tailored with dark themes and Tailwind CSS extensions for maximum coding efficiency.
-              </p>
-            </div>
           </div>
         `;
       }
@@ -796,7 +666,6 @@
       modal.classList.add('flex');
     }
 
-    // 7. Modal Close Controls & Image Zooming
     function closeGameModal() {
       const modal = document.getElementById('gameModal');
       modal.classList.add('hidden');
@@ -821,12 +690,12 @@
       if (e.target === modal) closeGameModal();
     });
 
-    // 8. Automated Motto Quote Rotator with Smooth Fade Transitions
     const kartelQuotes = [
-      '"Someone get these beggers out of here." — El padrino',
-      '"Because if money is the price of your loyalty, is\'t that prostitution my lady." — Portmore',
+      '"I will be here as always I have been." — The Godfather',
+      '"Because if money is the price of your loyalty, isn\'t that prostitution my lady.." — Portmore',
       '"I won\'t abandon my principles to please anyone.Love should add to my life, not erase who I am." — Rooney',
-      '"It has to work out, this is literally my life." — Ochieng'
+      '"It has to work out, this is literally my life." — Ochieng',
+      '"Someone get these beggers out of here." — El padrino'
     ];
     let quoteIdx = 0;
 
@@ -834,20 +703,17 @@
       const el = document.getElementById('kartelQuote');
       if (!el) return;
       
-      // Step 1: Smooth Fade Out
       el.classList.remove('opacity-100');
       el.classList.add('opacity-0');
       
-      // Step 2: Swap Text halfway through fade and Fade In back
       setTimeout(() => {
         quoteIdx = (quoteIdx + 1) % kartelQuotes.length;
         el.textContent = kartelQuotes[quoteIdx];
         el.classList.remove('opacity-0');
         el.classList.add('opacity-100');
-      }, 700); // 700ms matches transition duration
+      }, 700);
     }
 
-    // Automatically rotate mottos every 6.5 seconds (6500ms) for ideal reading pacing
     setInterval(rotateKartelQuoteAuto, 6500);
   </script>
 </body>
