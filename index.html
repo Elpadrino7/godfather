@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Biography & Portfolio — ROONEY (GODFATHER LLC)</title>
+  <title>Rooney (GODFATHER LLC)</title>
   
   <!-- OpenGraph Meta Tags -->
   <meta property="og:title" content="ROONEY — GODFATHER LLC" />
@@ -583,19 +583,19 @@
             <img src="efootball 1.jpg" onclick="zoomImage(this.src)" alt="eFootball Squad" class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+1.jpg+Not+Found'" />
           </div>
           <div class="space-y-2 pt-2">
-            <p class="text-xs text-zinc-500 font-bold">2. My Division 1 Badges (Tap to Zoom)</p>
+            <p class="text-xs text-zinc-500 font-bold">2. Division 1 Highest Badge (Tap to Zoom)</p>
             <img src="efootball 2.jpg" onclick="zoomImage(this.src)" alt="eFootball Division 1 Rank" class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=efootball+2.jpg+Not+Found'" />
           </div>
         `;
       } else if (gameType === 'pubg') {
-        modalTitle.textContent = 'PUBG MOBILE — Check out my skin (I don\'t play pubg that much)';
+        modalTitle.textContent = 'PUBG MOBILE — Conqueror Rank & Loadout';
         modalImages.innerHTML = `
           <div class="space-y-2">
-            <p class="text-xs text-zinc-500 font-bold">1. Conqueror Badge & Statistics. (Tap to Zoom)</p>
+            <p class="text-xs text-zinc-500 font-bold">1. Conqueror Badge & Statistics (Tap to Zoom)</p>
             <img src="pubg 1.jpg" onclick="zoomImage(this.src)" alt="PUBG Conqueror Badge" class="w-full rounded-xl object-cover ring-1 ring-amber-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+1.jpg+Not+Found'" />
           </div>
           <div class="space-y-2 pt-2">
-            <p class="text-xs text-zinc-500 font-bold">2. I'll upload my sensitivity settings on 12/12/2026. (Tap to Zoom)</p>
+            <p class="text-xs text-zinc-500 font-bold">2. In-Game Controls & Sensitivity Setup (Tap to Zoom)</p>
             <img src="pubg 2.jpg" onclick="zoomImage(this.src)" alt="PUBG Gameplay Setup" class="w-full rounded-xl object-cover ring-1 ring-amber-600/30 cursor-zoom-in hover:opacity-95 transition-opacity" onerror="this.src='https://placehold.co/600x350/1e293b/ffffff?text=pubg+2.jpg+Not+Found'" />
           </div>
         `;
@@ -611,7 +611,7 @@
       const modalImages = document.getElementById('modalImages');
 
       if (type === 'games') {
-        modalTitle.textContent = 'Gaming Rig & Battlestation — Video Games (I\'m straight btw)';
+        modalTitle.textContent = 'Gaming Rig & Battlestation — Video Games';
         modalImages.innerHTML = `
           <div class="space-y-3">
             <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 shadow-md">
@@ -621,7 +621,7 @@
           </div>
         `;
       } else if (type === 'html') {
-        modalTitle.textContent = 'HTML5 / CSS3 Web Development (Just for fun)';
+        modalTitle.textContent = 'HTML5 / CSS3 Web Development';
         modalImages.innerHTML = `
           <div class="space-y-3">
             <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-orange-500/30 shadow-md">
@@ -631,7 +631,7 @@
           </div>
         `;
       } else if (type === 'adventure') {
-        modalTitle.textContent = 'Travel & Outdoor Adventure (Waiyaki way)';
+        modalTitle.textContent = 'Travel & Outdoor Adventure';
         modalImages.innerHTML = `
           <div class="space-y-3">
             <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-yellow-500/30 shadow-md">
@@ -651,7 +651,7 @@
           </div>
         `;
       } else if (type === 'vscode') {
-        modalTitle.textContent = 'VS Code Development Environment (My humor)';
+        modalTitle.textContent = 'VS Code Development Environment';
         modalImages.innerHTML = `
           <div class="space-y-3">
             <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-indigo-500/30 shadow-md">
@@ -668,6 +668,12 @@
 
     function closeGameModal() {
       const modal = document.getElementById('gameModal');
+      // Stop and reset any playing videos inside the modal when exiting
+      const videos = modal.querySelectorAll('video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
