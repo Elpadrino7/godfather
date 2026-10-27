@@ -412,43 +412,61 @@
       </div>
     </section>
 
-    <!-- HOBBIES & TECH STACK (UPDATED ICONS) -->
+    <!-- HOBBIES & TECH STACK (DIRECTLY EXPANDABLE SECTION) -->
     <section id="hobbies-tech" class="space-y-4">
       <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3">
         <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
           Hobbies & Tech Stack
         </h2>
-        <span class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-400">Click Any Badge</span>
+        <span class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-400">Click Any Badge Below</span>
       </div>
 
-      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-3">
-        <div class="flex flex-wrap gap-2">
+      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-4">
+        <!-- Badges Row -->
+        <div class="flex flex-wrap gap-2" id="techBadgesContainer">
           
-          <button onclick="openTechModal('html')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-orange-500 transition-all duration-200 cursor-pointer">
+          <button onclick="toggleTechInline('html')" id="badge-html" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-orange-500 transition-all duration-200 cursor-pointer">
             <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> HTML5 / CSS3
           </button>
 
-          <button onclick="openTechModal('adventure')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-yellow-500 transition-all duration-200 cursor-pointer">
+          <button onclick="toggleTechInline('adventure')" id="badge-adventure" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-yellow-500 transition-all duration-200 cursor-pointer">
             <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Adventure
           </button>
 
-          <button onclick="openTechModal('music')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-blue-500 transition-all duration-200 cursor-pointer">
+          <button onclick="toggleTechInline('music')" id="badge-music" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-blue-500 transition-all duration-200 cursor-pointer">
             <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg> Kartel Music
           </button>
           
-          <button onclick="openTechModal('games')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-emerald-500 transition-all duration-200 cursor-pointer">
+          <button onclick="toggleTechInline('games')" id="badge-games" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-emerald-500 transition-all duration-200 cursor-pointer">
             <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Video Games
           </button>
 
-          <button onclick="openTechModal('vscode')" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-indigo-500 transition-all duration-200 cursor-pointer">
+          <button onclick="toggleTechInline('vscode')" id="badge-vscode" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-indigo-500 transition-all duration-200 cursor-pointer">
             <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg> VS Code
           </button>
 
         </div>
+
+        <!-- Inline Expandable Video Container (object-contain used so video keeps exact original proportions) -->
+        <div id="inlineVideoContainer" class="hidden pt-2 transition-all duration-300">
+          <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 space-y-3 relative">
+            <div class="flex justify-between items-center">
+              <h4 id="inlineVideoTitle" class="text-xs font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-wide"></h4>
+              <button onclick="closeInlineVideo()" class="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 text-xs font-bold px-2 py-0.5 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors">Close ✕</button>
+            </div>
+            
+            <div id="inlineVideoContent" class="overflow-hidden rounded-lg flex justify-center bg-black/5 dark:bg-black/40">
+              <!-- Video injected via JS -->
+            </div>
+            
+            <p id="inlineVideoDesc" class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed"></p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- LET'S CONNECT (MINIMALIST HORIZONTAL LOGOS AS REFERENCED) -->
+    <!-- LET'S CONNECT -->
     <section id="connect" class="pt-8 border-t border-zinc-200 dark:border-zinc-800 space-y-6 text-center">
       <h2 class="text-xs font-extrabold tracking-widest uppercase text-zinc-500 dark:text-zinc-400">
         LET'S CONNECT
@@ -456,7 +474,6 @@
 
       <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
         
-        <!-- Twitter / X -->
         <a href="https://twitter.com/GODFATHER_LLC" target="_blank" rel="noopener" aria-label="Twitter X" onclick="triggerToast('Opening Twitter...')"
            class="text-zinc-800 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-transform duration-200 hover:scale-110">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -464,7 +481,6 @@
           </svg>
         </a>
 
-        <!-- Instagram -->
         <a href="https://instagram.com/_r00n3y_" target="_blank" rel="noopener" aria-label="Instagram" onclick="triggerToast('Opening Instagram...')"
            class="text-zinc-800 dark:text-zinc-200 hover:text-pink-500 transition-transform duration-200 hover:scale-110">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -472,7 +488,6 @@
           </svg>
         </a>
 
-        <!-- WhatsApp -->
         <a href="https://wa.me/+254797959452" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="triggerToast('Opening WhatsApp...')"
            class="text-zinc-800 dark:text-zinc-200 hover:text-emerald-500 transition-transform duration-200 hover:scale-110">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -480,7 +495,6 @@
           </svg>
         </a>
 
-        <!-- TikTok -->
         <a href="https://tiktok.com/@godfather.llc" target="_blank" rel="noopener" aria-label="TikTok" onclick="triggerToast('Opening TikTok...')"
            class="text-zinc-800 dark:text-zinc-200 hover:text-cyan-400 transition-transform duration-200 hover:scale-110">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -488,7 +502,6 @@
           </svg>
         </a>
 
-        <!-- Facebook -->
         <a href="https://facebook.com/Rooney Cgh" target="_blank" rel="noopener" aria-label="Facebook" onclick="triggerToast('Opening Facebook...')"
            class="text-zinc-800 dark:text-zinc-200 hover:text-blue-600 transition-transform duration-200 hover:scale-110">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -496,7 +509,6 @@
           </svg>
         </a>
 
-        <!-- Email -->
         <a href="mailto:your.itsrooney7@gmail.com" aria-label="Email" onclick="triggerToast('Opening Email...')"
            class="text-zinc-800 dark:text-zinc-200 hover:text-red-500 transition-transform duration-200 hover:scale-110">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -514,7 +526,7 @@
 
   </main>
 
-  <!-- SHOWCASE MODAL -->
+  <!-- GAME PROOF / IMAGE ZOOM MODAL -->
   <div id="gameModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 max-w-lg w-full p-6 rounded-2xl space-y-4 relative max-h-[90vh] overflow-y-auto shadow-2xl">
       <div class="flex justify-between items-center pb-3 border-b border-zinc-200 dark:border-zinc-800">
@@ -599,76 +611,92 @@
       modal.classList.add('flex');
     }
 
-    function openTechModal(type) {
-      const modal = document.getElementById('gameModal');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalImages = document.getElementById('modalImages');
-
-      if (type === 'games') {
-        modalTitle.textContent = 'Gaming Rig & Battlestation — Video Games';
-        modalImages.innerHTML = `
-          <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-emerald-600/30 shadow-md">
-              <source src="gaming-setup.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        `;
-      } else if (type === 'html') {
-        modalTitle.textContent = 'HTML5 / CSS3 Web Development';
-        modalImages.innerHTML = `
-          <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-orange-500/30 shadow-md">
-              <source src="html5-css3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        `;
-      } else if (type === 'adventure') {
-        modalTitle.textContent = 'Travel & Outdoor Adventure';
-        modalImages.innerHTML = `
-          <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-yellow-500/30 shadow-md">
-              <source src="adventure.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        `;
-      } else if (type === 'music') {
-        modalTitle.textContent = 'Vybz Kartel Playlist';
-        modalImages.innerHTML = `
-          <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-blue-500/30 shadow-md">
-              <source src="kartel-music.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        `;
-      } else if (type === 'vscode') {
-        modalTitle.textContent = 'VS Code Development Environment';
-        modalImages.innerHTML = `
-          <div class="space-y-3">
-            <video controls autoplay muted loop class="w-full rounded-xl object-cover ring-1 ring-indigo-500/30 shadow-md">
-              <source src="vscode-setup.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        `;
-      }
-
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
     function closeGameModal() {
       const modal = document.getElementById('gameModal');
-      const videos = modal.querySelectorAll('video');
-      videos.forEach(video => {
-        video.pause();
-        video.currentTime = 0;
-      });
       modal.classList.add('hidden');
       modal.classList.remove('flex');
+    }
+
+    // DIRECT INLINE EXPANDABLE VIDEO HANDLER (object-contain ensures complete visibility)
+    let currentActiveTech = null;
+
+    function toggleTechInline(type) {
+      const container = document.getElementById('inlineVideoContainer');
+      const titleEl = document.getElementById('inlineVideoTitle');
+      const contentEl = document.getElementById('inlineVideoContent');
+      const descEl = document.getElementById('inlineVideoDesc');
+
+      // Reset all badge highlights
+      ['html', 'adventure', 'music', 'games', 'vscode'].forEach(t => {
+        const btn = document.getElementById('badge-' + t);
+        if (btn) btn.classList.remove('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+      });
+
+      if (currentActiveTech === type) {
+        closeInlineVideo();
+        return;
+      }
+
+      currentActiveTech = type;
+      const activeBtn = document.getElementById('badge-' + type);
+      if (activeBtn) activeBtn.classList.add('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+
+      let title = '';
+      let videoSrc = '';
+      let desc = '';
+
+      if (type === 'games') {
+        title = 'Gaming Rig & Battlestation — Video Games';
+        videoSrc = 'gaming-setup.mp4';
+        desc = 'Custom competitive rig fine-tuned for low latency, high audio feedback, and split-second reflexes in eFootball™ and PUBG Mobile tournaments.';
+      } else if (type === 'html') {
+        title = 'HTML5 / CSS3 Web Development';
+        videoSrc = 'html5-css3.mp4';
+        desc = 'Clean, single-file layout construction using Tailwind CSS and semantic HTML5 for lightning-fast web pages.';
+      } else if (type === 'adventure') {
+        title = 'Travel & Outdoor Adventure';
+        videoSrc = 'adventure.mp4';
+        desc = 'Taking breaks from tech work and esports to travel across Kenya and connect with the outdoors.';
+      } else if (type === 'music') {
+        title = 'Vybz Kartel Playlist';
+        videoSrc = 'kartel-music.mp4';
+        desc = 'Lifelong music inspiration drawn from tracks like "Which League", "Send A Hell", "You Make Me Cry", "Fever", "Clarks", and "Summertime".';
+      } else if (type === 'vscode') {
+        title = 'VS Code Development Environment';
+        videoSrc = 'vscode-setup.mp4';
+        desc = 'Customized VS Code workspace tailored with dark themes and Tailwind CSS extensions for maximum coding efficiency.';
+      }
+
+      titleEl.textContent = title;
+      contentEl.innerHTML = `
+        <video controls autoplay muted loop class="w-full max-h-[450px] object-contain rounded-lg shadow-md">
+          <source src="${videoSrc}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+      descEl.textContent = desc;
+
+      container.classList.remove('hidden');
+    }
+
+    function closeInlineVideo() {
+      const container = document.getElementById('inlineVideoContainer');
+      const contentEl = document.getElementById('inlineVideoContent');
+      
+      const videos = container.querySelectorAll('video');
+      videos.forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+      });
+
+      contentEl.innerHTML = '';
+      container.classList.add('hidden');
+
+      ['html', 'adventure', 'music', 'games', 'vscode'].forEach(t => {
+        const btn = document.getElementById('badge-' + t);
+        if (btn) btn.classList.remove('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+      });
+      currentActiveTech = null;
     }
 
     function zoomImage(src) {
@@ -691,10 +719,10 @@
 
     const kartelQuotes = [
       '"I will be here as always I have been." — The Godfather',
-      '"Because if money is the price of your loyalty, isn\'t that prostitution my lady.." — Portmore',
-      '"I won\'t abandon my principles to please anyone.Love should add to my life, not erase who I am." — Rooney',
-      '"It has to work out, this is literally my life." — Ochieng',
-      '"Someone get these beggers out of here." — El padrino'
+      '"Which league you deh? Mindset over everything." — Gaza Motivation',
+      '"Step with focus, build with patience, speak with actions." — Gaza World Boss',
+      '"Real bosses don\'t loud up, the numbers and results speak." — Nonchalant Code',
+      '"Every challenge is just practice for the main tournament." — Strategy Principle'
     ];
     let quoteIdx = 0;
 
