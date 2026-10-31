@@ -80,15 +80,21 @@
     <span id="toastMsg">Copied to clipboard!</span>
   </div>
 
-  <!-- FIXED HEADER -->
-  <header class="fixed top-0 left-0 w-full z-40 clean-nav px-4 py-3">
+  <!-- FIXED HEADER (Redesigned & Creative) -->
+  <header class="fixed top-0 left-0 w-full z-40 clean-nav px-4 py-2.5">
     <div class="max-w-2xl mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-700 animate-pulse"></span>
-        <span class="font-bold text-xs sm:text-sm tracking-tight text-zinc-800 dark:text-zinc-200">Biography & Portfolio</span>
+      <div class="flex items-center gap-2.5">
+        <div class="relative flex items-center justify-center">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping absolute"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-700 relative"></span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-xs tracking-wider uppercase text-zinc-900 dark:text-zinc-100">ROONEY // PORTFOLIO</span>
+          <span class="text-[9px] font-semibold text-emerald-700 dark:text-emerald-400 tracking-tight">GODFATHER LLC</span>
+        </div>
       </div>
       <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-full text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200">
-        <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        <svg id="themeIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
       </button>
     </div>
   </header>
@@ -263,84 +269,63 @@
     </section>
 
     <!-- GAMING EXPERIENCE -->
-    <section id="gaming" class="space-y-6">
-      <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3">
-        <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-          Gaming Experience
-        </h2>
-        <span class="text-[11px] font-bold px-3 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">Tap for Proof</span>
-      </div>
+    <section id="gaming" class="space-y-4">
+      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+        Gaming Experience
+      </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <div onclick="openGameModal('efootball')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700 transition-all duration-300 relative overflow-hidden group cursor-pointer">
-          <div class="flex items-center gap-3 mb-4">
+        <div onclick="openGameModal('efootball')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 cursor-pointer bg-zinc-50/50 dark:bg-zinc-900/30 space-y-3 group">
+          <div class="flex items-center gap-3">
             <img 
               src="efootball-icon.png" 
               alt="eFootball Mobile Icon" 
-              class="w-12 h-12 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800 group-hover:scale-105 transition-transform duration-300 shrink-0"
+              class="w-10 h-10 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800 group-hover:scale-105 transition-transform duration-300 shrink-0"
               onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=eFootball'"
             />
             <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5">
-                <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100">eFootball™ Mobile</h3>
-              </div>
-              <p class="text-[11px] text-blue-600 dark:text-blue-400 font-bold">eFootball™ League Maestro</p>
+              <h3 class="text-xs font-bold uppercase tracking-wide text-zinc-900 dark:text-zinc-100">eFootball™ Mobile</h3>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">League Maestro</p>
             </div>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           </div>
 
-          <div class="space-y-2.5 text-xs">
-            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
-              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Highest Rank</span>
-              <span class="font-bold text-blue-600 dark:text-blue-400">Division 1 (26,479)</span>
+          <div class="space-y-1.5 text-xs">
+            <div class="flex justify-between items-center text-zinc-600 dark:text-zinc-400">
+              <span>Highest Rank</span>
+              <span class="font-semibold text-zinc-900 dark:text-zinc-100">Division 1 (26,479)</span>
             </div>
-            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
-              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Playstyle</span>
-              <span class="font-bold text-zinc-800 dark:text-zinc-200">LB Counter & Quick Counter</span>
-            </div>
-            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
-              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Squad Rating</span>
-              <span class="font-bold text-emerald-700 dark:text-emerald-400">3250</span>
-            </div>
-            <div class="flex justify-between items-center text-[11px] text-blue-600 dark:text-blue-400 font-bold pt-1">
-              <span>View Squad & Badge Proof</span>
-              <span>&rarr;</span>
+            <div class="flex justify-between items-center text-zinc-600 dark:text-zinc-400">
+              <span>Squad Rating</span>
+              <span class="font-semibold text-emerald-700 dark:text-emerald-400">3250</span>
             </div>
           </div>
         </div>
 
-        <div onclick="openGameModal('pubg')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-amber-600 transition-all duration-300 relative overflow-hidden group cursor-pointer">
-          <div class="flex items-center gap-3 mb-4">
+        <div onclick="openGameModal('pubg')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 cursor-pointer bg-zinc-50/50 dark:bg-zinc-900/30 space-y-3 group">
+          <div class="flex items-center gap-3">
             <img 
               src="pubg-icon.png" 
               alt="PUBG Mobile Icon" 
-              class="w-12 h-12 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800 group-hover:scale-105 transition-transform duration-300 shrink-0"
+              class="w-10 h-10 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800 group-hover:scale-105 transition-transform duration-300 shrink-0"
               onerror="this.src='https://placehold.co/100x100/d97706/ffffff?text=PUBG'"
             />
             <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5">
-                <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100">PUBG MOBILE</h3>
-              </div>
-              <p class="text-[11px] text-amber-600 dark:text-amber-400 font-bold">Tactical Ultimate Royale</p>
+              <h3 class="text-xs font-bold uppercase tracking-wide text-zinc-900 dark:text-zinc-100">PUBG MOBILE</h3>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Tactical Ultimate Royale</p>
             </div>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           </div>
 
-          <div class="space-y-2.5 text-xs">
-            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
-              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Peak Rank</span>
-              <span class="font-bold text-amber-600 dark:text-amber-400">Conqueror</span>
+          <div class="space-y-1.5 text-xs">
+            <div class="flex justify-between items-center text-zinc-600 dark:text-zinc-400">
+              <span>Peak Rank</span>
+              <span class="font-semibold text-zinc-900 dark:text-zinc-100">Conqueror</span>
             </div>
-            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
-              <span class="text-zinc-600 dark:text-zinc-400 font-medium">In-Game Role</span>
-              <span class="font-bold text-zinc-800 dark:text-zinc-200">Assaulter & Sniper</span>
-            </div>
-            <div class="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-1.5 gap-2">
-              <span class="text-zinc-600 dark:text-zinc-400 font-medium">Favorite Guns</span>
-              <span class="font-bold text-amber-600 dark:text-amber-400">M416 / AUG + AWM</span>
-            </div>
-            <div class="flex justify-between items-center text-[11px] text-amber-600 dark:text-amber-400 font-bold pt-1">
-              <span>View Tier & Highlights</span>
-              <span>&rarr;</span>
+            <div class="flex justify-between items-center text-zinc-600 dark:text-zinc-400">
+              <span>Primary Role</span>
+              <span class="font-semibold text-amber-600 dark:text-amber-400">Assaulter & Sniper</span>
             </div>
           </div>
         </div>
@@ -350,31 +335,27 @@
 
     <!-- CREATIVE WORK & PROJECTS -->
     <section id="projects" class="space-y-4">
-      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-3">
         Creative Work & Projects
       </h2>
 
-      <div class="grid grid-cols-1 gap-4">
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-2.5">
-          <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
-              Minimal Web Layouts & Micro-Apps
-            </h3>
-            <span class="shrink-0 text-[10px] font-bold px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400">Active</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 space-y-2 bg-zinc-50/50 dark:bg-zinc-900/30">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-bold tracking-wide uppercase text-zinc-900 dark:text-zinc-100">Minimal Web Layouts</h3>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           </div>
-          <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Building lightweight, high-performance web templates that load instantaneously and offer clean typography-driven user experiences.
           </p>
         </div>
 
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-2.5">
-          <div class="flex flex-wrap sm:flex-nowrap justify-between items-start gap-2">
-            <h3 class="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
-              Esports Gameplay Clips & Edits
-            </h3>
-            <span class="shrink-0 text-[10px] font-bold px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">Creative</span>
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 space-y-2 bg-zinc-50/50 dark:bg-zinc-900/30">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-bold tracking-wide uppercase text-zinc-900 dark:text-zinc-100">Esports Clip Edits</h3>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           </div>
-          <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Editing high-octane eFootball match highlights and PUBG Mobile clutches with smooth transitions and synchronized audio beat matches.
           </p>
         </div>
@@ -383,71 +364,77 @@
 
     <!-- PHILOSOPHY & CORE PRINCIPLES -->
     <section id="philosophy" class="space-y-4">
-      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-3">
         Philosophy & Core Principles
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-1">
-          <h3 class="text-xs font-extrabold text-zinc-900 dark:text-zinc-100">SELF-RESPECT</h3>
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 space-y-1">
+          <span class="text-[10px] font-bold text-emerald-700 dark:text-emerald-500 tracking-widest uppercase">01</span>
+          <h3 class="text-xs font-bold text-zinc-900 dark:text-zinc-100">Self-Respect</h3>
           <p class="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Never lose yourself trying to be someone else.</p>
         </div>
 
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-1">
-          <h3 class="text-xs font-extrabold text-zinc-900 dark:text-zinc-100">LOYALTY</h3>
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 space-y-1">
+          <span class="text-[10px] font-bold text-emerald-700 dark:text-emerald-500 tracking-widest uppercase">02</span>
+          <h3 class="text-xs font-bold text-zinc-900 dark:text-zinc-100">Loyalty</h3>
           <p class="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Give genuine commitment, but expect it to be mutual.</p>
         </div>
 
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-1">
-          <h3 class="text-xs font-extrabold text-zinc-900 dark:text-zinc-100">PURPOSE</h3>
+        <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 space-y-1">
+          <span class="text-[10px] font-bold text-emerald-700 dark:text-emerald-500 tracking-widest uppercase">03</span>
+          <h3 class="text-xs font-bold text-zinc-900 dark:text-zinc-100">Purpose</h3>
           <p class="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">Have directions, maintain your standards, and keep growing.</p>
         </div>
       </div>
 
-      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center gap-3">
-        <span class="text-emerald-700 text-lg font-bold shrink-0">&ldquo;</span>
-        <p id="kartelQuote" class="text-xs italic text-zinc-700 dark:text-zinc-300 transition-opacity duration-700 opacity-100 font-semibold leading-relaxed">
+      <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center gap-3 bg-zinc-50/40 dark:bg-zinc-900/20">
+        <span class="text-emerald-700 text-base font-bold shrink-0">&ldquo;</span>
+        <p id="kartelQuote" class="text-xs italic text-zinc-700 dark:text-zinc-300 transition-opacity duration-700 opacity-100 font-medium leading-relaxed">
           "I will be here as always I have been." — The Godfather
         </p>
       </div>
     </section>
 
-    <!-- HOBBIES & TECH STACK (DIRECTLY EXPANDABLE SECTION) -->
+    <!-- HOBBIES & TECH STACK (Compact Horizontal Row Layout) -->
     <section id="hobbies-tech" class="space-y-4">
-      <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3">
-        <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
-          Hobbies & Tech Stack
-        </h2>
-        <span class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-400">Click Any Badge Below</span>
-      </div>
+      <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+        Hobbies & Tech Stack
+      </h2>
 
-      <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-4">
-        <!-- Badges Row -->
-        <div class="flex flex-wrap gap-2" id="techBadgesContainer">
+      <div class="p-4 sm:p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-4 bg-zinc-50/30 dark:bg-zinc-900/20">
+        
+        <!-- Compact Horizontal Scrollable/Flex Bar -->
+        <div class="flex items-center justify-between gap-1.5 sm:gap-2 overflow-x-auto pb-1 no-scrollbar" id="techBadgesContainer">
           
-          <button onclick="toggleTechInline('html')" id="badge-html" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-orange-500 transition-all duration-200 cursor-pointer">
-            <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> HTML5 / CSS3
+          <button onclick="toggleTechInline('html')" id="badge-html" class="flex-1 min-w-[70px] py-2.5 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 flex flex-col items-center text-center gap-1 hover:border-emerald-700 transition-all duration-200 cursor-pointer bg-white dark:bg-zinc-900 shadow-sm">
+            <svg class="w-4 h-4 text-orange-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <span class="text-[10px] sm:text-xs font-bold truncate w-full">HTML</span>
           </button>
 
-          <button onclick="toggleTechInline('adventure')" id="badge-adventure" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-yellow-500 transition-all duration-200 cursor-pointer">
-            <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Adventure
+          <button onclick="toggleTechInline('adventure')" id="badge-adventure" class="flex-1 min-w-[70px] py-2.5 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 flex flex-col items-center text-center gap-1 hover:border-emerald-700 transition-all duration-200 cursor-pointer bg-white dark:bg-zinc-900 shadow-sm">
+            <svg class="w-4 h-4 text-yellow-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-[10px] sm:text-xs font-bold truncate w-full">Travel</span>
           </button>
 
-          <button onclick="toggleTechInline('music')" id="badge-music" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-blue-500 transition-all duration-200 cursor-pointer">
-            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg> Kartel Music
+          <button onclick="toggleTechInline('music')" id="badge-music" class="flex-1 min-w-[70px] py-2.5 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 flex flex-col items-center text-center gap-1 hover:border-emerald-700 transition-all duration-200 cursor-pointer bg-white dark:bg-zinc-900 shadow-sm">
+            <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+            <span class="text-[10px] sm:text-xs font-bold truncate w-full">Music</span>
           </button>
           
-          <button onclick="toggleTechInline('games')" id="badge-games" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-emerald-500 transition-all duration-200 cursor-pointer">
-            <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Video Games
+          <button onclick="toggleTechInline('games')" id="badge-games" class="flex-1 min-w-[70px] py-2.5 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 flex flex-col items-center text-center gap-1 hover:border-emerald-700 transition-all duration-200 cursor-pointer bg-white dark:bg-zinc-900 shadow-sm">
+            <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-[10px] sm:text-xs font-bold truncate w-full">Gaming</span>
           </button>
 
-          <button onclick="toggleTechInline('vscode')" id="badge-vscode" class="px-3.5 py-2 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold flex items-center gap-2 hover:border-indigo-500 transition-all duration-200 cursor-pointer">
-            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg> VS Code
+          <button onclick="toggleTechInline('vscode')" id="badge-vscode" class="flex-1 min-w-[70px] py-2.5 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 flex flex-col items-center text-center gap-1 hover:border-emerald-700 transition-all duration-200 cursor-pointer bg-white dark:bg-zinc-900 shadow-sm">
+            <svg class="w-4 h-4 text-indigo-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span class="text-[10px] sm:text-xs font-bold truncate w-full">VS Code</span>
           </button>
 
         </div>
 
-        <!-- Inline Expandable Video Container (object-contain used so video keeps exact original proportions) -->
+        <!-- Inline Expandable Video Container -->
         <div id="inlineVideoContainer" class="hidden pt-2 transition-all duration-300">
           <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 space-y-3 relative">
             <div class="flex justify-between items-center">
@@ -520,7 +507,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-center pt-8 text-xs font-bold text-zinc-500 dark:text-zinc-400">
+    <footer class="text-center pt-8 text-xs font-normal text-zinc-500 dark:text-zinc-400">
       <p>© <span id="year"></span> GODFATHER LLC. All rights reserved.</p>
     </footer>
 
@@ -617,7 +604,7 @@
       modal.classList.remove('flex');
     }
 
-    // DIRECT INLINE EXPANDABLE VIDEO HANDLER (object-contain ensures complete visibility)
+    // DIRECT INLINE EXPANDABLE VIDEO HANDLER
     let currentActiveTech = null;
 
     function toggleTechInline(type) {
@@ -626,7 +613,6 @@
       const contentEl = document.getElementById('inlineVideoContent');
       const descEl = document.getElementById('inlineVideoDesc');
 
-      // Reset all badge highlights
       ['html', 'adventure', 'music', 'games', 'vscode'].forEach(t => {
         const btn = document.getElementById('badge-' + t);
         if (btn) btn.classList.remove('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
