@@ -80,17 +80,18 @@
     <span id="toastMsg">Copied to clipboard!</span>
   </div>
 
-  <!-- FIXED HEADER (Redesigned & Creative) -->
+  <!-- FIXED HEADER -->
   <header class="fixed top-0 left-0 w-full z-40 clean-nav px-4 py-2.5">
     <div class="max-w-2xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-2.5">
-        <div class="relative flex items-center justify-center">
-          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping absolute"></span>
-          <span class="w-2 h-2 rounded-full bg-emerald-700 relative"></span>
-        </div>
+        <img 
+          src="logo.jpg" 
+          alt="Logo" 
+          class="w-9 h-9 rounded-xl object-cover object-[center_top] ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm shrink-0"
+          onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=G'"
+        />
         <div class="flex flex-col">
-          <span class="font-extrabold text-xs tracking-wider uppercase text-zinc-900 dark:text-zinc-100">ROONEY // PORTFOLIO</span>
-          <span class="text-[9px] font-semibold text-emerald-700 dark:text-emerald-400 tracking-tight">GODFATHER LLC</span>
+          <span class="font-extrabold text-xs tracking-wider uppercase text-zinc-900 dark:text-zinc-100">GODFATHER LLC</span>
         </div>
       </div>
       <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-full text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200">
@@ -107,7 +108,8 @@
       <div class="flex flex-col items-center justify-center gap-4">
         <div class="relative group shrink-0">
           <img 
-            src="Rooney.jpg" 
+            src="
+            Rooney.jpg" 
             alt="Rooney"
             class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-[center_top] ring-2 ring-emerald-700/40 shadow-md"
             onerror="this.src='https://placehold.co/200x200/1e293b/ffffff?text=Rooney'"
@@ -125,6 +127,8 @@
               <svg class="w-3.5 h-3.5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               Nairobi, Kenya
             </p>
+            <span class="text-zinc-300 dark:text-zinc-700">•</span>
+            <span class="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400" id="liveClock">--:--:-- EAT</span>
           </div>
         </div>
       </div>
@@ -229,7 +233,12 @@
         
         <div class="space-y-1.5 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
           <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">B.Sc. in Computer Science (Degree)</h3>
-          <p class="text-xs font-semibold text-emerald-700 dark:text-emerald-500">Kisii University</p>
+          <p class="text-xs">
+            <a href="https://kisiiuniversity.ac.ke" target="_blank" rel="noopener" class="font-bold text-emerald-700 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+              Kisii University
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </p>
           <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed pt-1">
             Specializing in web application development, interactive design systems, and network communication fundamentals.
           </p>
@@ -259,7 +268,12 @@
         
         <div class="space-y-1.5 max-w-lg px-2 py-4 bg-white dark:bg-zinc-950 z-10 my-1">
           <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">Primary School (KCPE)</h3>
-          <p class="text-xs font-semibold text-emerald-700 dark:text-emerald-500">Missions Of Hope International</p>
+          <p class="text-xs">
+            <a href="https://give.mohiafrica.org" target="_blank" rel="noopener" class="font-bold text-emerald-700 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+              Missions Of Hope International
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </p>
           <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed pt-1">
             Nothing much I did in Primary School, Just playing all around.
           </p>
@@ -276,7 +290,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <div onclick="openGameModal('efootball')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 cursor-pointer bg-zinc-50/50 dark:bg-zinc-900/30 space-y-3 group">
+        <div onclick="openGameModal('efootball')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/60 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] transition-all duration-300 cursor-pointer bg-zinc-50/50 dark:bg-zinc-900/30 space-y-3 group">
           <div class="flex items-center gap-3">
             <img 
               src="efootball-icon.png" 
@@ -303,7 +317,7 @@
           </div>
         </div>
 
-        <div onclick="openGameModal('pubg')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 cursor-pointer bg-zinc-50/50 dark:bg-zinc-900/30 space-y-3 group">
+        <div onclick="openGameModal('pubg')" class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/60 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] transition-all duration-300 cursor-pointer bg-zinc-50/50 dark:bg-zinc-900/30 space-y-3 group">
           <div class="flex items-center gap-3">
             <img 
               src="pubg-icon.png" 
@@ -340,7 +354,7 @@
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 space-y-2 bg-zinc-50/50 dark:bg-zinc-900/30">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/60 transition-all duration-300 space-y-2 bg-zinc-50/50 dark:bg-zinc-900/30">
           <div class="flex items-center justify-between">
             <h3 class="text-xs font-bold tracking-wide uppercase text-zinc-900 dark:text-zinc-100">Minimal Web Layouts</h3>
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
@@ -350,7 +364,7 @@
           </p>
         </div>
 
-        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/50 transition-all duration-300 space-y-2 bg-zinc-50/50 dark:bg-zinc-900/30">
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-emerald-700/60 transition-all duration-300 space-y-2 bg-zinc-50/50 dark:bg-zinc-900/30">
           <div class="flex items-center justify-between">
             <h3 class="text-xs font-bold tracking-wide uppercase text-zinc-900 dark:text-zinc-100">Esports Clip Edits</h3>
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
@@ -388,15 +402,16 @@
         </div>
       </div>
 
-      <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center gap-3 bg-zinc-50/40 dark:bg-zinc-900/20">
+      <!-- Interactive Tap-to-Shuffle Quote Box -->
+      <div onclick="rotateKartelQuoteAuto()" class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center gap-3 bg-zinc-50/40 dark:bg-zinc-900/20 cursor-pointer hover:border-emerald-700/50 transition-colors group" title="Tap to shuffle quote">
         <span class="text-emerald-700 text-base font-bold shrink-0">&ldquo;</span>
-        <p id="kartelQuote" class="text-xs italic text-zinc-700 dark:text-zinc-300 transition-opacity duration-700 opacity-100 font-medium leading-relaxed">
+        <p id="kartelQuote" class="text-xs italic text-zinc-700 dark:text-zinc-300 transition-opacity duration-700 opacity-100 font-medium leading-relaxed group-hover:text-emerald-700 dark:group-hover:text-emerald-400">
           "I will be here as always I have been." — The Godfather
         </p>
       </div>
     </section>
 
-    <!-- HOBBIES & TECH STACK (Compact Horizontal Row Layout) -->
+    <!-- HOBBIES & TECH STACK -->
     <section id="hobbies-tech" class="space-y-4">
       <h2 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-3">
         Hobbies & Tech Stack
@@ -404,7 +419,6 @@
 
       <div class="p-4 sm:p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-4 bg-zinc-50/30 dark:bg-zinc-900/20">
         
-        <!-- Compact Horizontal Scrollable/Flex Bar -->
         <div class="flex items-center justify-between gap-1.5 sm:gap-2 overflow-x-auto pb-1 no-scrollbar" id="techBadgesContainer">
           
           <button onclick="toggleTechInline('html')" id="badge-html" class="flex-1 min-w-[70px] py-2.5 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 flex flex-col items-center text-center gap-1 hover:border-emerald-700 transition-all duration-200 cursor-pointer bg-white dark:bg-zinc-900 shadow-sm">
@@ -554,6 +568,30 @@
       document.getElementById('scroll-progress').style.width = scrollPercent + '%';
     });
 
+    // Developer Keyboard Shortcuts (T for theme, C for connect, H for top)
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+      const key = e.key.toLowerCase();
+      if (key === 't') {
+        document.documentElement.classList.toggle('dark');
+        triggerToast('Theme toggled');
+      } else if (key === 'c') {
+        document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' });
+      } else if (key === 'h') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Live Nairobi Local Time Widget
+    function updateNairobiTime() {
+      const clockEl = document.getElementById('liveClock');
+      if (!clockEl) return;
+      const options = { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      clockEl.textContent = new Intl.DateTimeFormat([], options).format(new Date()) + ' EAT';
+    }
+    setInterval(updateNairobiTime, 1000);
+    updateNairobiTime();
+
     function triggerToast(text) {
       const toast = document.getElementById('toast');
       document.getElementById('toastMsg').textContent = text;
@@ -604,7 +642,6 @@
       modal.classList.remove('flex');
     }
 
-    // DIRECT INLINE EXPANDABLE VIDEO HANDLER
     let currentActiveTech = null;
 
     function toggleTechInline(type) {
@@ -615,7 +652,7 @@
 
       ['html', 'adventure', 'music', 'games', 'vscode'].forEach(t => {
         const btn = document.getElementById('badge-' + t);
-        if (btn) btn.classList.remove('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+        if (btn) btn.classList.remove('border-2', 'border-dashed', 'border-emerald-600', 'bg-emerald-50/50', 'dark:bg-emerald-950/20');
       });
 
       if (currentActiveTech === type) {
@@ -625,7 +662,7 @@
 
       currentActiveTech = type;
       const activeBtn = document.getElementById('badge-' + type);
-      if (activeBtn) activeBtn.classList.add('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+      if (activeBtn) activeBtn.classList.add('border-2', 'border-dashed', 'border-emerald-600', 'bg-emerald-50/50', 'dark:bg-emerald-950/20');
 
       let title = '';
       let videoSrc = '';
@@ -680,7 +717,7 @@
 
       ['html', 'adventure', 'music', 'games', 'vscode'].forEach(t => {
         const btn = document.getElementById('badge-' + t);
-        if (btn) btn.classList.remove('ring-2', 'ring-emerald-700', 'bg-emerald-50', 'dark:bg-emerald-950/30');
+        if (btn) btn.classList.remove('border-2', 'border-dashed', 'border-emerald-600', 'bg-emerald-50/50', 'dark:bg-emerald-950/20');
       });
       currentActiveTech = null;
     }
@@ -704,7 +741,7 @@
     });
 
     const kartelQuotes = [
-    '"I will be here as always I have been." — The Godfather',
+      '"I will be here as always I have been." — The Godfather',
       '"Someone get these beggers out of here." — Rooney',
       '"I won\'t abandon my principles to please anyone. Love should add to my life, not erase who I am." — Your Mother',
       '"Because if money is the price of your loyalty, isn\'t that prostitution, my lady !?.." — Ochieng',
